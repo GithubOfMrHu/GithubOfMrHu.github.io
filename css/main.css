@@ -1895,7 +1895,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b4ff33;
+  background: #feffcf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3056,9 +3056,12 @@ body {
   background: #f0ffff;
   opacity: 0.8;
 }
-.menu-item-active a,
+.menu-item-active a {
+  background: #faf0e6;
+  border-bottom-color: #fff;
+}
 .menu .menu-item a:hover,
 .menu .menu-item span.exturl:hover {
-  background: #faf0e6;
+  background: #eac096;
   border-bottom-color: #fff;
 }
