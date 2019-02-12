@@ -1288,7 +1288,7 @@ pre .javascript .function {
 .post-body .image-caption,
 .post-body .figure .caption {
   margin: -20px auto 15px;
-  text-align: center;
+  text-align: left;
   font-size: 14px;
   color: #999;
   font-weight: bold;
@@ -1895,7 +1895,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36d1a1;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
