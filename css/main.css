@@ -1272,6 +1272,8 @@ pre .javascript .function {
 .post-body {
   overflow-wrap: break-word;
   word-wrap: break-word;
+  overflow: hidden;
+  text-align: left;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .post-body .exturl .fa {
@@ -1288,7 +1290,7 @@ pre .javascript .function {
 .post-body .image-caption,
 .post-body .figure .caption {
   margin: -20px auto 15px;
-  text-align: left;
+  text-align: center;
   font-size: 14px;
   color: #999;
   font-weight: bold;
@@ -1895,7 +1897,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #fff7e2;
 }
 .links-of-blogroll {
   font-size: 13px;
