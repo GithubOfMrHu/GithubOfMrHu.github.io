@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
+  <meta name="description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置    建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习笔记（二）：">
 <meta property="og:url" content="http://yoursite.com/2019/02/12/Spring2/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
+<meta property="og:description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置    建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T07:53:05.189Z">
+<meta property="og:updated_time" content="2019-02-27T08:32:35.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习笔记（二）：">
-<meta name="twitter:description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
+<meta name="twitter:description" content="Spring配置的方案Spring提供了三种主要的装配机制：  隐式的bean发现机制和自动装配 在java中进行显示配置 在xml中进行显式配置    建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。">
 
 
 
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-26 15:53:05" itemprop="dateModified" datetime="2019-02-26T15:53:05+08:00">2019-02-26</time>
+                <time title="修改时间：2019-02-27 16:32:35" itemprop="dateModified" datetime="2019-02-27T16:32:35+08:00">2019-02-27</time>
               
             
           </span>
@@ -463,13 +463,17 @@
 <ul>
 <li>隐式的bean发现机制和自动装配</li>
 <li>在java中进行显示配置</li>
-<li>在xml中进行显式配置<br>建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。<a id="more"></a>
-<h1 id="自动化装配"><a href="#自动化装配" class="headerlink" title="自动化装配"></a>自动化装配</h1>Spring通过两种机制来实现自动装配：</li>
-<li>组件扫描(component scanning)：Spring会自动发现上下文中创建的bean。</li>
-<li>自动装配(autowiring)：Spring自动满足bean之间的依赖。<h2 id="创建可被发现的bean"><a href="#创建可被发现的bean" class="headerlink" title="创建可被发现的bean"></a>创建可被发现的bean</h2><h3 id="定义CD-CompactDisc-的一个接口"><a href="#定义CD-CompactDisc-的一个接口" class="headerlink" title="定义CD(CompactDisc)的一个接口"></a>定义CD(CompactDisc)的一个接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> soundsystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CompactDisc</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>在xml中进行显式配置  </li>
 </ul>
-<h3 id="使用-Component注解的CompactDisc接口实现类SgtPeppers"><a href="#使用-Component注解的CompactDisc接口实现类SgtPeppers" class="headerlink" title="使用@Component注解的CompactDisc接口实现类SgtPeppers"></a>使用@Component注解的CompactDisc接口实现类SgtPeppers</h3><p>@Component注解会表明该类会作为组件类、并告知Spring为这个类创建bean。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> soundsystem;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Componet;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SgtPeppers</span> <span class="title">implenments</span> <span class="title">CompactDisc</span></span>&#123;</span><br><span class="line">    <span class="comment">//甲壳虫乐队于1967年发行的专辑：帕伯军士的孤独之心俱乐部乐队 </span></span><br><span class="line">    <span class="keyword">private</span> String title = <span class="string">"Sgt. Pepper's Lonely Hearts Club Band"</span>;</span><br><span class="line">    <span class="keyword">private</span> String artist = <span class="string">"The Beatles "</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Playing "</span> +　titile + <span class="string">"by "</span> + artist);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。<br><a id="more"></a></p>
+<h1 id="自动化装配"><a href="#自动化装配" class="headerlink" title="自动化装配"></a>自动化装配</h1><p>Spring通过两种机制来实现自动装配：</p>
+<ul>
+<li>组件扫描(component scanning)：Spring会自动发现上下文中创建的bean。</li>
+<li>自动装配(autowiring)：Spring自动满足bean之间的依赖。</li>
+</ul>
+<h2 id="创建可被发现的bean"><a href="#创建可被发现的bean" class="headerlink" title="创建可被发现的bean"></a>创建可被发现的bean</h2><h3 id="定义CD-CompactDisc-的一个接口"><a href="#定义CD-CompactDisc-的一个接口" class="headerlink" title="定义CD(CompactDisc)的一个接口"></a>定义CD(CompactDisc)的一个接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> soundsystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CompactDisc</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-Component注解的CompactDisc接口实现类SgtPeppers"><a href="#使用-Component注解的CompactDisc接口实现类SgtPeppers" class="headerlink" title="使用@Component注解的CompactDisc接口实现类SgtPeppers"></a>使用@Component注解的CompactDisc接口实现类SgtPeppers</h3><p>@Component注解会表明该类会作为组件类、并告知Spring为这个类创建bean。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> soundsystem;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Componet;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SgtPeppers</span> <span class="title">implenments</span> <span class="title">CompactDisc</span></span>&#123;</span><br><span class="line">    <span class="comment">//甲壳虫乐队于1967年发行的专辑：帕伯军士的孤独之心俱乐部乐队 </span></span><br><span class="line">    <span class="keyword">private</span> String title = <span class="string">"Sgt. Pepper's Lonely Hearts Club Band"</span>;</span><br><span class="line">    <span class="keyword">private</span> String artist = <span class="string">"The Beatles "</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Playing "</span> +　titile + <span class="string">"by "</span> + artist);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="启用组件扫描"><a href="#启用组件扫描" class="headerlink" title="启用组件扫描"></a>启用组件扫描</h3><p>默认情况下组件扫描是不启用的，可以通过显式配置命令Spring去寻找带有@Component注解的类，并为其创建bean。</p>
 <h4 id="使用-ComponentScan注解启用自动扫描"><a href="#使用-ComponentScan注解启用自动扫描" class="headerlink" title="使用@ComponentScan注解启用自动扫描"></a>使用@ComponentScan注解启用自动扫描</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> soundsystem;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.componentScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Con;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerConfig</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>@ComponentScan默认会扫描与配置类相同的包。因为CDPlayerConfig类位于soundsystem包中，因此Spring将会扫描这个包以及这个包下的所有子包，查找带有@Component注解的类。这样的话，就能发现CompactDisc，并且会在Spring中自动为其创建一个bean。</p>
@@ -479,15 +483,18 @@
 <p>CDPlayerTest使用了Spring的SpringJUnit4ClassRunner，以便在测试开始的时候自动创建Spring的应用上下文。注解@ContextConfiguration会告诉它需要在CDPlayerConfig中加载配置。因为CDPlayerConfig类中包含了@ComponentScan，因此最终的应用上下文中应该包含CompactDiscbean。<br>为了证明这一点，在测试代码中有一个CompactDisc类型的属性，并且这个属性带有@Autowired注解，以便于将CompactDiscbean注入到测试代码之中。最后，会有一个简单的测试方法断言cd属性不为null。如果它不为null的话，就意味着Spring能够发现CompactDisc类，自动在Spring上下文中将其创<br>建为bean并将其注入到测试代码之中。</p>
 <h3 id="为组件扫描的bean命名"><a href="#为组件扫描的bean命名" class="headerlink" title="为组件扫描的bean命名"></a>为组件扫描的bean命名</h3><ul>
 <li>使用@Component(“newName”)</li>
-<li>使用@Named(“newName”),来自于Java依赖注入规范（Java Dependency Injection）<h3 id="设置组件扫描的基础包"><a href="#设置组件扫描的基础包" class="headerlink" title="设置组件扫描的基础包"></a>设置组件扫描的基础包</h3><h4 id="通过-ComponentScan的value属性指明包的名称"><a href="#通过-ComponentScan的value属性指明包的名称" class="headerlink" title="通过@ComponentScan的value属性指明包的名称"></a>通过@ComponentScan的value属性指明包的名称</h4></li>
+<li>使用@Named(“newName”),来自于Java依赖注入规范（Java Dependency Injection）</li>
+</ul>
+<h3 id="设置组件扫描的基础包"><a href="#设置组件扫描的基础包" class="headerlink" title="设置组件扫描的基础包"></a>设置组件扫描的基础包</h3><h4 id="通过-ComponentScan的value属性指明包的名称"><a href="#通过-ComponentScan的value属性指明包的名称" class="headerlink" title="通过@ComponentScan的value属性指明包的名称"></a>通过@ComponentScan的value属性指明包的名称</h4><ul>
 <li><code>@ComponentScan(&quot;soundsystem&quot;)</code></li>
 <li><code>@ComponentScan(basePackage=&quot;soundsystem&quot;)</code></li>
-<li><code>@ComponentScan(basePackage={&quot;soundsystem&quot;,&quot;video&quot;})</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackage=&#123;<span class="string">"soundsystem"</span>,<span class="string">"video"</span>&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerConfig</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>@ComponentScan(basePackage={&quot;soundsystem&quot;,&quot;video&quot;})</code></li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackage=&#123;<span class="string">"soundsystem"</span>,<span class="string">"video"</span>&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CDPlayerConfig</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="将-ComponentScan指定为b包中所含的类或接口"><a href="#将-ComponentScan指定为b包中所含的类或接口" class="headerlink" title="将@ComponentScan指定为b包中所含的类或接口"></a>将@ComponentScan指定为b包中所含的类或接口</h4><ul>
-<li><code>@ComponentScan(basePackageClass={CDPlayer.class,DVDPlayer.class})</code><br>不再使用String类型的名称来指定包，而是为basePackageClasses属性所设置的数组中包含了<br>类。这些类所在的包将会作为组件扫描的基础包。尽管在样例中，我为basePackageClasses设置的是组件类，但是你可以考虑在包中创建一个用来进行扫描的空标记接口（markerinterface）。通过标记接口的方式，你依然能够保持对重构友好的接口引用，但是可以避免引用任何实际的应用程序代码（在稍后重构中，这些应用代码有可能会从想要扫描的包中移除掉）。</li>
+<li><code>@ComponentScan(basePackageClass={CDPlayer.class,DVDPlayer.class})</code>  </li>
 </ul>
+<p>不再使用String类型的名称来指定包，而是为basePackageClasses属性所设置的数组中包含的类和接口。这些类所在的包将会作为组件扫描的基础包。尽管在样例中，我为basePackageClasses设置的是组件类，但是你可以考虑在包中创建一个用来进行扫描的空标记接口（markerinterface）。通过标记接口的方式，你依然能够保持对重构友好的接口引用，但是可以避免引用任何实际的应用程序代码（在稍后重构中，这些应用代码有可能会从想要扫描的包中移除掉）。</p>
 
       
     </div>
