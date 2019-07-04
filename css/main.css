@@ -1144,7 +1144,7 @@ pre .javascript .function {
   position: relative;
 }
 .headband {
-  height: 3px;
+  height: 0px;
   background: #222;
 }
 .site-meta {
@@ -1897,7 +1897,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #bde5f0;
+  background: #007fa3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2998,15 +2998,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background: url("https://source.unsplash.com/collection/2526539/1600x900");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
+  background-color: #01847f;
 }
 .header {
   width: 80%;
