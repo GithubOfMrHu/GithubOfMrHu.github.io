@@ -336,6 +336,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/An Spider Program Based On SpringMVC/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/06/An Spider Program Based On SpringMVC/" class="post-title-link" itemprop="url">An Spider Program Based On SpringMVC</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-06 15:20:01" itemprop="dateCreated datePublished" datetime="2019-08-06T15:20:01+08:00">2019-08-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-29 23:48:19" itemprop="dateModified" datetime="2020-03-29T23:48:19+08:00">2020-03-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2019/08/06/An Spider Program Based On SpringMVC/" class="leancloud_visitors" data-flag-title="An Spider Program Based On SpringMVC">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><p>java ide + fidder(获取请求和返回信息)</p>
+<h1 id="ssm-框架"><a href="#ssm-框架" class="headerlink" title="ssm 框架"></a>ssm 框架</h1><p>spring + spring mvc + mybtais</p>
+<h2 id="srping-mvc"><a href="#srping-mvc" class="headerlink" title="srping mvc"></a>srping mvc</h2><p>MVC:Model + View + Controller</p>
+<p>Spring MVC:dao and service + jsp(暂时可以先不开发) + controller</p>
+<h1 id="program"><a href="#program" class="headerlink" title="program"></a>program</h1><h2 id="structure"><a href="#structure" class="headerlink" title="structure"></a>structure</h2><p>基于spring mvc框架，核心程序在service（业务层）</p>
+<h2 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h2><p>一般分为登录、跳转、请求报表、初步解析、持久化、数据转化与成表数据持久化。<br>通过定时任务并发执行不同系统的爬取过程，在service层进行校验是否已经爬取到数据，没有则执行爬取过程。</p>
+<h2 id="使用的工具类及方法"><a href="#使用的工具类及方法" class="headerlink" title="使用的工具类及方法"></a>使用的工具类及方法</h2><h3 id="模拟网页操作过程发送请求"><a href="#模拟网页操作过程发送请求" class="headerlink" title="模拟网页操作过程发送请求"></a>模拟网页操作过程发送请求</h3><p>Spring下的HTTP中的各个封装类及RestTemplate。</p>
+<pre><code>Package org.springframework.http
+Contains a basic abstraction over client/server-side HTTP.
+
+The central class for client-side HTTP access. It simplifies communication with HTTP servers, and enforces RESTful principles. It handles HTTP connections, leaving application code to provide URLs (with possible template variables) and extract results.
+</code></pre><p>refs：</p>
+<ul>
+<li><a href="https://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/web/client/RestTemplate.html</a></li>
+<li><a href="https://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/http/" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/http/</a></li>
+</ul>
+<p>解析：jsoup + 正则表达式</p>
+<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><p>对于同一系统下的数据，相同的处理逻辑应封装为可调用的接口实现代码复用。</p>
+<h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled</span>(cron=<span class="string">"0 0/30 10-13 * * ?"</span>)</span><br><span class="line"><span class="comment">//每天10点到13点每半个小时执行一次</span></span><br></pre></td></tr></table></figure>
+<h2 id="模拟访问发送请求"><a href="#模拟访问发送请求" class="headerlink" title="模拟访问发送请求"></a>模拟访问发送请求</h2><h3 id="HTTP：HyperText-Transfer-Protocol-超文本传输协议"><a href="#HTTP：HyperText-Transfer-Protocol-超文本传输协议" class="headerlink" title="HTTP：HyperText Transfer Protocol,超文本传输协议"></a>HTTP：HyperText Transfer Protocol,超文本传输协议</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Create HTTP headers</span></span><br><span class="line">HttpHeaders myHttpHeaders = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">myHttpHeaders.add(<span class="string">"HeaderParamName"</span>,<span class="string">"HeaderParamValue"</span>);</span><br><span class="line"><span class="comment">//create HTTP entity</span></span><br><span class="line">HttpEntity&lt;MultiValueMap&lt;String, String&gt;&gt; myHttpEntity = <span class="keyword">new</span> HttpEntity&lt;&gt;(<span class="keyword">null</span>, myHttpHeaders);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* create response entity to get the request response</span></span><br><span class="line"><span class="comment">* 发送请求并获取返回报文</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">ResponseEntity&lt;String&gt; myRequest = rest.exchange(url,HttpMethod.GET,myHttpEntity,String.class);</span><br><span class="line"><span class="comment">//Get cookies，一般在登录时获取一次，在之后的请求中使用</span></span><br><span class="line">List&lt;String&gt; myCookie = myRequest.getHeaders().get(HttpHeaders.SET_COOKIE);</span><br><span class="line"><span class="comment">//get response.body</span></span><br><span class="line">Document myDoc = Jsoup.parse(myRequest.getBody());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 解析myDoc</span></span><br><span class="line"><span class="comment">* todo</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/note/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -356,7 +540,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/24/note/" class="post-title-link" itemprop="url">note</a>
+                <a href="/2019/06/24/note/" class="post-title-link" itemprop="url">正则表达式匹配特定字符串之间的内容，HEXO博客迁移</a>
               
             
           </h1>
@@ -398,7 +582,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-15 18:00:39" itemprop="dateModified" datetime="2019-07-15T18:00:39+08:00">2019-07-15</time>
+                <time title="修改时间：2020-03-29 23:41:03" itemprop="dateModified" datetime="2020-03-29T23:41:03+08:00">2020-03-29</time>
               
             
           </span>
@@ -430,7 +614,7 @@
 
           
           
-            <span id="/2019/06/24/note/" class="leancloud_visitors" data-flag-title="note">
+            <span id="/2019/06/24/note/" class="leancloud_visitors" data-flag-title="正则表达式匹配特定字符串之间的内容，HEXO博客迁移">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -546,7 +730,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/22/note/" class="post-title-link" itemprop="url">20190621_unfinished</a>
+                <a href="/2019/03/22/note/" class="post-title-link" itemprop="url">VSCODE + HEXO + Latex 在博客中展示数学公式，Hexo更换背景图片</a>
               
             
           </h1>
@@ -588,7 +772,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-09 15:20:04" itemprop="dateModified" datetime="2019-07-09T15:20:04+08:00">2019-07-09</time>
+                <time title="修改时间：2020-03-29 23:40:54" itemprop="dateModified" datetime="2020-03-29T23:40:54+08:00">2020-03-29</time>
               
             
           </span>
@@ -620,7 +804,7 @@
 
           
           
-            <span id="/2019/03/22/note/" class="leancloud_visitors" data-flag-title="20190621_unfinished">
+            <span id="/2019/03/22/note/" class="leancloud_visitors" data-flag-title="VSCODE + HEXO + Latex 在博客中展示数学公式，Hexo更换背景图片">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -778,7 +962,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-24 09:06:00" itemprop="dateModified" datetime="2019-06-24T09:06:00+08:00">2019-06-24</time>
+                <time title="修改时间：2019-06-24 09:06:02" itemprop="dateModified" datetime="2019-06-24T09:06:02+08:00">2019-06-24</time>
               
             
           </span>
@@ -973,7 +1157,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-24 09:36:06" itemprop="dateModified" datetime="2019-06-24T09:36:06+08:00">2019-06-24</time>
+                <time title="修改时间：2019-06-24 09:36:08" itemprop="dateModified" datetime="2019-06-24T09:36:08+08:00">2019-06-24</time>
               
             
           </span>
@@ -1164,7 +1348,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:38:51" itemprop="dateModified" datetime="2019-06-21T17:38:51+08:00">2019-06-21</time>
+                <time title="修改时间：2019-06-21 17:38:52" itemprop="dateModified" datetime="2019-06-21T17:38:52+08:00">2019-06-21</time>
               
             
           </span>
@@ -1354,7 +1538,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-24 09:36:06" itemprop="dateModified" datetime="2019-06-24T09:36:06+08:00">2019-06-24</time>
+                <time title="修改时间：2019-06-24 09:36:08" itemprop="dateModified" datetime="2019-06-24T09:36:08+08:00">2019-06-24</time>
               
             
           </span>
@@ -1547,7 +1731,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:38:51" itemprop="dateModified" datetime="2019-06-21T17:38:51+08:00">2019-06-21</time>
+                <time title="修改时间：2019-06-21 17:38:52" itemprop="dateModified" datetime="2019-06-21T17:38:52+08:00">2019-06-21</time>
               
             
           </span>
@@ -1743,7 +1927,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:41:05" itemprop="dateModified" datetime="2019-06-21T17:41:05+08:00">2019-06-21</time>
+                <time title="修改时间：2019-06-21 17:41:06" itemprop="dateModified" datetime="2019-06-21T17:41:06+08:00">2019-06-21</time>
               
             
           </span>
@@ -2067,7 +2251,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2182,7 +2366,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -2398,6 +2582,8 @@
 
   
   
+    
+      
     
       
     
