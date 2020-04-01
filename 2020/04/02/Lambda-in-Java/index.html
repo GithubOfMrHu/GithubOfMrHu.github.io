@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。 lambda in java 8A s">
+  <meta name="description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。">
 <meta name="keywords" content="Java,Lambda">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lambda in Java">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/Lambda-in-Java/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。 lambda in java 8A s">
+<meta property="og:description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T16:38:46.026Z">
+<meta property="og:updated_time" content="2020-04-01T18:06:43.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lambda in Java">
-<meta name="twitter:description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。 lambda in java 8A s">
+<meta name="twitter:description" content="lambda什么是lambda“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。 使用lambda可以使代码更简洁。">
 
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:08:32 / 修改时间：00:38:46" itemprop="dateCreated datePublished" datetime="2020-04-02T00:08:32+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:08:32 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:08:32+08:00">2020-04-02</time>
             
 
             
@@ -431,7 +431,7 @@
 
       
         <h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><h2 id="什么是lambda"><a href="#什么是lambda" class="headerlink" title="什么是lambda"></a>什么是lambda</h2><p>“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。</p>
-<p>使用lambda可以使代码更简洁。</p>
+<p>使用lambda可以使代码更简洁。<br><a id="more"></a></p>
 <h2 id="lambda-in-java-8"><a href="#lambda-in-java-8" class="headerlink" title="lambda in java 8"></a>lambda in java 8</h2><h2 id="A-simple-example"><a href="#A-simple-example" class="headerlink" title="A simple example"></a>A simple example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// no lambda</span></span><br><span class="line">Runnable noLambda = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Running without Lambda"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// java import lambda since 1.8</span></span><br><span class="line">Runnable useLambda = () -&gt; </span><br><span class="line">    System.out.println(<span class="string">"Running from Lambda"</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>可选类型声明：不需要声明参数类型，编译器可以统一识别参数值。</li>

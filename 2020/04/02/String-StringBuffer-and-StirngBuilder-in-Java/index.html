@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String 原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并">
+  <meta name="description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String, StringBuffer and StirngBuilder in Java">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/String-StringBuffer-and-StirngBuilder-in-Java/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String 原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并">
+<meta property="og:description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T16:57:31.757Z">
+<meta property="og:updated_time" content="2020-04-01T18:06:43.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String, StringBuffer and StirngBuilder in Java">
-<meta name="twitter:description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String 原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并">
+<meta name="twitter:description" content="java中String、StringBuffer和StirngBuilder执行速度由快至慢：StringBuilder &amp;gt; StringBuffer &amp;gt; String">
 
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:57:16 / 修改时间：00:57:31" itemprop="dateCreated datePublished" datetime="2020-04-02T00:57:16+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:57:16 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:57:16+08:00">2020-04-02</time>
             
 
             
@@ -430,8 +430,7 @@
       
 
       
-        <h1 id="java中String、StringBuffer和StirngBuilder"><a href="#java中String、StringBuffer和StirngBuilder" class="headerlink" title="java中String、StringBuffer和StirngBuilder"></a>java中String、StringBuffer和StirngBuilder</h1><h2 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h2><p>由快至慢：StringBuilder &gt; StringBuffer &gt; String</p>
-<p>原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。但后两者的对象是变量，是可以更改的，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
+        <h1 id="java中String、StringBuffer和StirngBuilder"><a href="#java中String、StringBuffer和StirngBuilder" class="headerlink" title="java中String、StringBuffer和StirngBuilder"></a>java中String、StringBuffer和StirngBuilder</h1><h2 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h2><p>由快至慢：StringBuilder &gt; StringBuffer &gt; String<br><a id="more"></a><br>原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。但后两者的对象是变量，是可以更改的，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
 <h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>StringBuilder是线程不安全的，而StringBuffer是线程安全的（方法由synchronized修饰）。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>String：适用于少量的字符串操作的情况。</p>
 <p>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况。</p>

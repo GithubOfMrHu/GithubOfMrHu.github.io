@@ -851,7 +851,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:19:14 / 修改时间：01:21:05" itemprop="dateCreated datePublished" datetime="2020-04-02T01:19:14+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 01:19:14 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T01:19:14+08:00">2020-04-02</time>
             
 
             
@@ -902,31 +902,19 @@
 
       
         
+          <h1 id="LeetCode-Q3-Longest-Substring-Without-Repeating-Characters"><a href="#LeetCode-Q3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="LeetCode Q3 Longest Substring Without Repeating Characters"></a>LeetCode Q3 Longest Substring Without Repeating Characters</h1><p>Given a string, find the length of the longest substring without repeating characters.<br>
+          <!--noindex-->
           
-            <h1 id="LeetCode-Q3-Longest-Substring-Without-Repeating-Characters"><a href="#LeetCode-Q3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="LeetCode Q3 Longest Substring Without Repeating Characters"></a>LeetCode Q3 Longest Substring Without Repeating Characters</h1><p>Given a string, find the length of the longest substring without repeating characters.</p>
-<h2 id="THINKING"><a href="#THINKING" class="headerlink" title="THINKING"></a>THINKING</h2><ul>
-<li>首先考虑为空和字符串s仅包含一个字符的情况，直接返回s本身。</li>
-<li>之后考虑复杂情况，将s赋值给字符数组str，通过head和tail记录不重复子字符串的起始和终止字符在str中的下标(之后发现并不需要记录tail)，len记录当前不重复子字符串的最大长度。<ul>
-<li>从前至后遍历str，当前下标为i的元素通过遍历和head和tail之间的元素进行比较：<ul>
-<li>若没有相同的字符  则 <code>tail++;</code></li>
-<li>若有相同的字符，即<code>str[i]==str[j]</code>,<br>则<code>head=j+1;tail++;</code><br>当<code>len&lt;tail-head+1;</code>时，<code>len=tail-len+1;</code></li>
-</ul>
-</li>
-<li>返回len</li>
-</ul>
-</li>
-</ul>
-<h2 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h2><h3 id="MY-SOLUTION"><a href="#MY-SOLUTION" class="headerlink" title="MY SOLUTION"></a>MY SOLUTION</h3><p>runtime:14ms, beats 100.00 % of java submissions.</p>
-<p>Memory Usage: 40.3 MB, beats 9.23 % of java submissions.</p>
-<p>对char[]进行操作，以空间换时间。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(lengthOfLongestSubstring(<span class="string">"a"</span>));</span><br><span class="line">		System.exit(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> tail = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">char</span>[] str=s.toCharArray();</span><br><span class="line">    	<span class="keyword">if</span>(s.length()==<span class="number">0</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">if</span>(s.length()==<span class="number">1</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">int</span> j;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;str.length;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(j=head;j&lt;=tail;j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str[i]==str[j]) &#123;</span><br><span class="line">					head = j+<span class="number">1</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tail++;</span><br><span class="line">			<span class="keyword">if</span>(tail-head+<span class="number">1</span>&gt;len) &#123;</span><br><span class="line">				len=tail-head+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="讨论区得票最高的答案"><a href="#讨论区得票最高的答案" class="headerlink" title="讨论区得票最高的答案"></a>讨论区得票最高的答案</h3><p>思路大体相同，但通过使用HashMap数据结构、String类的<br>charAt方法和Math类的max方法，使代码更加简洁。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.length()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>, j=<span class="number">0</span>; i&lt;s.length(); ++i)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(s.charAt(i)))&#123;</span><br><span class="line">                j = Math.max(j,map.get( )+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">            max = Math.max(max,i-j+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/Leetcode-M3-Longest-Substring-Without-Repeating-Characters/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
 
@@ -1023,7 +1011,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:15:06 / 修改时间：01:17:31" itemprop="dateCreated datePublished" datetime="2020-04-02T01:15:06+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 01:15:06 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T01:15:06+08:00">2020-04-02</time>
             
 
             
@@ -1074,13 +1062,19 @@
 
       
         
+          <h1 id="LEFT-JOIN-in-Oracle"><a href="#LEFT-JOIN-in-Oracle" class="headerlink" title="LEFT JOIN in Oracle"></a>LEFT JOIN in Oracle</h1><p>LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。<br>
+          <!--noindex-->
           
-            <h1 id="LEFT-JOIN-in-Oracle"><a href="#LEFT-JOIN-in-Oracle" class="headerlink" title="LEFT JOIN in Oracle"></a>LEFT JOIN in Oracle</h1><p>LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table_name2 </span><br><span class="line"><span class="keyword">ON</span> table_name1.column_name=table_name2.column_name</span><br></pre></td></tr></table></figure>
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/SQL Learning Notes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
 
@@ -1177,7 +1171,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:10:22 / 修改时间：01:13:03" itemprop="dateCreated datePublished" datetime="2020-04-02T01:10:22+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 01:10:22 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T01:10:22+08:00">2020-04-02</time>
             
 
             
@@ -1228,22 +1222,16 @@
 
       
         
+          <h1 id="ORACLE-SQL-通过出生日期得到年龄"><a href="#ORACLE-SQL-通过出生日期得到年龄" class="headerlink" title="ORACLE SQL 通过出生日期得到年龄"></a>ORACLE SQL 通过出生日期得到年龄</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> TRUNC(months_between(<span class="keyword">sysdate</span>, birthday)/<span class="number">12</span>) <span class="keyword">as</span> age</span><br><span class="line"><span class="keyword">from</span> table_person</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
           
-            <h1 id="ORACLE-SQL-通过出生日期得到年龄"><a href="#ORACLE-SQL-通过出生日期得到年龄" class="headerlink" title="ORACLE SQL 通过出生日期得到年龄"></a>ORACLE SQL 通过出生日期得到年龄</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> TRUNC(months_between(<span class="keyword">sysdate</span>, birthday)/<span class="number">12</span>) <span class="keyword">as</span> age</span><br><span class="line"><span class="keyword">from</span> table_person</span><br></pre></td></tr></table></figure>
-<h2 id="month-between函数"><a href="#month-between函数" class="headerlink" title="month_between函数"></a>month_between函数</h2><p>month_between函数返回两个<code>日期</code>之间的月份数。如果两个日期月份内天数相同，或者都是某个月的最后一天，返回一个整数，否则，返回数值带小数，以每天1/31月来计算月中剩余天数。</p>
-<p>使用month_between等处理日期的函数，要注意参数的数据格式，如数据库中的数据为1937-02-19，要用<code>to_date(birthday,’yyyy-mm-dd’)</code>转换成与sysdate相同的数据格式。</p>
-<h2 id="TRUNC函数"><a href="#TRUNC函数" class="headerlink" title="TRUNC函数"></a>TRUNC函数</h2><ul>
-<li>处理number型数字。<br><code>TRUNC(number[,decimals])</code><br>number 待做截取处理的数值；decimals 指明需保留小数点后面的位数，可选项，忽略它则截去所有的小数部分,并且截取时并不对数据进行四舍五入。</li>
-<li>处理日期。<br><code>TRUNC(date[,fmt])</code><br>date 一个日期数据；fmt 日期格式。该日期将按指定的日期格式截取；忽略它则由最近的日期截取。如下：</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/13,返回当前时间</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'yy'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/1/1,返回当年第一天</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'mm'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/1,返回当月的第一天</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'d'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/12,返回当前星期的第一天，即星期天</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'dd'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/13,返回当前日期,今天是2017/2/13</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span> ,<span class="string">'HH24'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/13 15:00:00,返回本小时的开始时间</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span> ,<span class="string">'MI'</span>) <span class="keyword">from</span> dual;<span class="comment">--2017/2/13 15:13:00,返回本分钟的开始时间</span></span><br></pre></td></tr></table></figure>
-<h2 id="floor、ceil、round函数"><a href="#floor、ceil、round函数" class="headerlink" title="floor、ceil、round函数"></a>floor、ceil、round函数</h2><ul>
-<li><code>floor(x)</code>&emsp;向下取整，与<code>trunc</code>都可以实现截去小数部分。</li>
-<li><code>ceil(x)</code>&emsp;向上取整。</li>
-<li><code>round(x)</code>&emsp;四舍五入。</li>
-</ul>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/Oracle-SQL通过出生日期得到年龄/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -1343,7 +1331,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:57:16 / 修改时间：00:57:31" itemprop="dateCreated datePublished" datetime="2020-04-02T00:57:16+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:57:16 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:57:16+08:00">2020-04-02</time>
             
 
             
@@ -1394,18 +1382,19 @@
 
       
         
+          <h1 id="java中String、StringBuffer和StirngBuilder"><a href="#java中String、StringBuffer和StirngBuilder" class="headerlink" title="java中String、StringBuffer和StirngBuilder"></a>java中String、StringBuffer和StirngBuilder</h1><h2 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h2><p>由快至慢：StringBuilder &gt; StringBuffer &gt; String<br>
+          <!--noindex-->
           
-            <h1 id="java中String、StringBuffer和StirngBuilder"><a href="#java中String、StringBuffer和StirngBuilder" class="headerlink" title="java中String、StringBuffer和StirngBuilder"></a>java中String、StringBuffer和StirngBuilder</h1><h2 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h2><p>由快至慢：StringBuilder &gt; StringBuffer &gt; String</p>
-<p>原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量。String对象一旦创建之后该对象是不可更改的，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。但后两者的对象是变量，是可以更改的，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
-<h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>StringBuilder是线程不安全的，而StringBuffer是线程安全的（方法由synchronized修饰）。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>String：适用于少量的字符串操作的情况。</p>
-<p>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况。</p>
-<p>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况。</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/String-StringBuffer-and-StirngBuilder-in-Java/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
 
     
 
@@ -1502,7 +1491,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:54:36 / 修改时间：00:54:50" itemprop="dateCreated datePublished" datetime="2020-04-02T00:54:36+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:54:36 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:54:36+08:00">2020-04-02</time>
             
 
             
@@ -1553,8 +1542,7 @@
 
       
         
-          
-            <h1 id="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"><a href="#java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改" class="headerlink" title="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"></a>java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改</h1><p>由LeetCode第49题Group Anagrams讨论区中高票解法中的一种写法引发的思考，问题和代码如下：</p>
+          <h1 id="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"><a href="#java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改" class="headerlink" title="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"></a>java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改</h1><p>由LeetCode第49题Group Anagrams讨论区中高票解法中的一种写法引发的思考，问题和代码如下：</p>
 <pre><code>Given an array of strings, group anagrams together.
 Example:
 Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],
@@ -1567,14 +1555,16 @@ Output:
 Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
-</code></pre><p>Solution：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123; </span><br><span class="line">   <span class="keyword">int</span>[] prime = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">71</span>, <span class="number">73</span>, <span class="number">79</span>, <span class="number">83</span>, <span class="number">89</span>, <span class="number">97</span>, <span class="number">101</span>, <span class="number">103</span>&#125;;<span class="comment">//最多10609个z</span></span><br><span class="line">    </span><br><span class="line">            List&lt;List&lt;String&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (String s : strs) &#123;</span><br><span class="line">                <span class="keyword">int</span> key = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">                    key *= prime[c - <span class="string">'a'</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                List&lt;String&gt; t;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(key)) &#123;</span><br><span class="line">                    t = res.get(map.get(key));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    t = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                    res.add(t);</span><br><span class="line">                    map.put(key, res.size() - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                t.add(s);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>通过<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; t;</span><br><span class="line">t = res.get(map.get(key));</span><br><span class="line">t.add(s);</span><br></pre></td></tr></table></figure></p>
-<p>这三条语句实现修改<code>t</code>同时修改<code>res</code>，因为此时引用数据类型List实例t指向的是res对应元素。、</p>
-<h2 id="java中基本数据类型和引用数据类型"><a href="#java中基本数据类型和引用数据类型" class="headerlink" title="java中基本数据类型和引用数据类型"></a>java中基本数据类型和引用数据类型</h2><p>当基本数据类型（Boolean，byte，char，String，int，Long，float，double）作为参数传递时，传递的是实参值的副本，即传的是值，无论在函数中怎么操作这个副本，实参的值是不会被改变的。</p>
-<p>而引用数据类型以对象作为参数传递时，实际上传递的是一份“引用的拷贝”（对象的引用）。 </p>
-
+</code></pre>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/Basic-Data-Types-and-Reference-Data-Types-in-Java/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1674,7 +1664,7 @@ The order of your output does not matter.
                 
               
 
-              <time title="创建时间：2020-04-02 00:46:17 / 修改时间：00:46:47" itemprop="dateCreated datePublished" datetime="2020-04-02T00:46:17+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:46:17 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:46:17+08:00">2020-04-02</time>
             
 
             
@@ -1725,21 +1715,17 @@ The order of your output does not matter.
 
       
         
-          
-            <h1 id="Boostrap中-col-xs"><a href="#Boostrap中-col-xs" class="headerlink" title="Boostrap中.col-xs-"></a>Boostrap中<code>.col-xs-</code></h1><h2 id="usage"><a href="#usage" class="headerlink" title="usage"></a>usage</h2><p>将最外面的布局元素 .container 修改为 .container-fluid，就可以将固定宽度的栅格布局转换为 100% 宽度的布局。</p>
+          <h1 id="Boostrap中-col-xs"><a href="#Boostrap中-col-xs" class="headerlink" title="Boostrap中.col-xs-"></a>Boostrap中<code>.col-xs-</code></h1><h2 id="usage"><a href="#usage" class="headerlink" title="usage"></a>usage</h2><p>将最外面的布局元素 .container 修改为 .container-fluid，就可以将固定宽度的栅格布局转换为 100% 宽度的布局。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container-fluid"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">".col-xs-1"</span>&gt;</span> </span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">".col-xs-11"</span>&gt;</span> </span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Characters"><a href="#Characters" class="headerlink" title="Characters"></a>Characters</h2><p>针对超小屏幕的类，总是水平排列。可以避免在页面缩放时左图片右文字布局出现文字覆盖图片的情况。</p>
-<p>而其余类<code>.col-sm-,.col-md-,col-lg-</code>开始是堆叠在一起的，当大于这些阈值时将变为水平排列。</p>
-<h2 id="栅格系统"><a href="#栅格系统" class="headerlink" title="栅格系统"></a>栅格系统</h2><p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
-<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。下面就介绍一下 Bootstrap 栅格系统的工作原理：</p>
-<ul>
-<li>“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。</li>
-<li>通过“行（row）”在水平方向创建一组“列（column）”。</li>
-<li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li>
-<li>……</li>
-</ul>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/Grid-of-Booostrap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1839,7 +1825,7 @@ The order of your output does not matter.
                 
               
 
-              <time title="创建时间：2020-04-02 00:42:28 / 修改时间：01:17:37" itemprop="dateCreated datePublished" datetime="2020-04-02T00:42:28+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:42:28 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:42:28+08:00">2020-04-02</time>
             
 
             
@@ -1890,13 +1876,16 @@ The order of your output does not matter.
 
       
         
+          <h1 id="Java中使用匿名内部类对Map数据类型进行初始化"><a href="#Java中使用匿名内部类对Map数据类型进行初始化" class="headerlink" title="Java中使用匿名内部类对Map数据类型进行初始化"></a>Java中使用匿名内部类对Map数据类型进行初始化</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
           
-            <h1 id="Java中使用匿名内部类对Map数据类型进行初始化"><a href="#Java中使用匿名内部类对Map数据类型进行初始化" class="headerlink" title="Java中使用匿名内部类对Map数据类型进行初始化"></a>Java中使用匿名内部类对Map数据类型进行初始化</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br></pre></td></tr></table></figure>
-<h1 id="利用Map数据构造List数据"><a href="#利用Map数据构造List数据" class="headerlink" title="利用Map数据构造List数据"></a>利用Map数据构造List数据</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;(map.values());</span><br></pre></td></tr></table></figure>
-<h2 id="Map-values-方法"><a href="#Map-values-方法" class="headerlink" title="Map.values()方法"></a>Map.values()方法</h2><p>Returns:a collection view of the values contained in this map.</p>
-<p>The collection is backed by the map, so changes to the map are reflected in the collection, and vice-versa. If the map is modified while an iteration over the collection is in progress (except through the iterator’s own remove operation), the results of the iteration are undefined. The collection supports element removal, which removes the corresponding mapping from the map, via the Iterator.remove, Collection.remove, removeAll, retainAll and clear operations. It does not support the add or addAll operations.</p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/02/Map-In-Java/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>

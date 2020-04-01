@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person month_between函数month_between函数返回两个日期之间的月份数。如果两个日期月份内天数相同，或者都是某个月的最后一天，返回一个整数，否则，返回数值带小数，以每天1/31月来计算月中剩">
+  <meta name="description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person">
 <meta name="keywords" content="SQL,Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle SQL通过出生日期得到年龄">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/Oracle-SQL通过出生日期得到年龄/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person month_between函数month_between函数返回两个日期之间的月份数。如果两个日期月份内天数相同，或者都是某个月的最后一天，返回一个整数，否则，返回数值带小数，以每天1/31月来计算月中剩">
+<meta property="og:description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T17:13:03.095Z">
+<meta property="og:updated_time" content="2020-04-01T18:06:43.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle SQL通过出生日期得到年龄">
-<meta name="twitter:description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person month_between函数month_between函数返回两个日期之间的月份数。如果两个日期月份内天数相同，或者都是某个月的最后一天，返回一个整数，否则，返回数值带小数，以每天1/31月来计算月中剩">
+<meta name="twitter:description" content="ORACLE SQL 通过出生日期得到年龄12select TRUNC(months_between(sysdate, birthday)/12) as agefrom table_person">
 
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:10:22 / 修改时间：01:13:03" itemprop="dateCreated datePublished" datetime="2020-04-02T01:10:22+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 01:10:22 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T01:10:22+08:00">2020-04-02</time>
             
 
             
@@ -431,6 +431,7 @@
 
       
         <h1 id="ORACLE-SQL-通过出生日期得到年龄"><a href="#ORACLE-SQL-通过出生日期得到年龄" class="headerlink" title="ORACLE SQL 通过出生日期得到年龄"></a>ORACLE SQL 通过出生日期得到年龄</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> TRUNC(months_between(<span class="keyword">sysdate</span>, birthday)/<span class="number">12</span>) <span class="keyword">as</span> age</span><br><span class="line"><span class="keyword">from</span> table_person</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="month-between函数"><a href="#month-between函数" class="headerlink" title="month_between函数"></a>month_between函数</h2><p>month_between函数返回两个<code>日期</code>之间的月份数。如果两个日期月份内天数相同，或者都是某个月的最后一天，返回一个整数，否则，返回数值带小数，以每天1/31月来计算月中剩余天数。</p>
 <p>使用month_between等处理日期的函数，要注意参数的数据格式，如数据库中的数据为1937-02-19，要用<code>to_date(birthday,’yyyy-mm-dd’)</code>转换成与sysdate相同的数据格式。</p>
 <h2 id="TRUNC函数"><a href="#TRUNC函数" class="headerlink" title="TRUNC函数"></a>TRUNC函数</h2><ul>
