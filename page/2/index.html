@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/Hexo个性化设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/得意忘形播客第0期笔记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -356,7 +356,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/22/Hexo个性化设置/" class="post-title-link" itemprop="url">Hexo个性化设置</a>
+                <a href="/2020/04/02/得意忘形播客第0期笔记/" class="post-title-link" itemprop="url">得意忘形播客第0期笔记</a>
               
             
           </h1>
@@ -381,47 +381,17 @@
                 
               
 
-              <time title="创建时间：2019-03-22 15:49:05" itemprop="dateCreated datePublished" datetime="2019-03-22T15:49:05+08:00">2019-03-22</time>
+              <time title="创建时间：2020-04-02 00:36:19 / 修改时间：00:36:43" itemprop="dateCreated datePublished" datetime="2020-04-02T00:36:19+08:00">2020-04-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-01 23:55:34" itemprop="dateModified" datetime="2020-04-01T23:55:34+08:00">2020-04-01</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/unfinished/" itemprop="url" rel="index"><span itemprop="name">unfinished</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -430,7 +400,7 @@
 
           
           
-            <span id="/2019/03/22/Hexo个性化设置/" class="leancloud_visitors" data-flag-title="Hexo个性化设置">
+            <span id="/2020/04/02/得意忘形播客第0期笔记/" class="leancloud_visitors" data-flag-title="得意忘形播客第0期笔记">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -463,16 +433,34 @@
       
         
           
-            <h1 id="如何使Hexo-Next主题支持Latex数学公式"><a href="#如何使Hexo-Next主题支持Latex数学公式" class="headerlink" title="如何使Hexo Next主题支持Latex数学公式"></a>如何使Hexo Next主题支持Latex数学公式</h1><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>由于我使用的Next主题,在路径为<code>\blog_path\themes\next\docs\MATH.md</code>的文档中找到了官方给出的支持数学公式的方法：需要修改主题的配置文件打开数学公式渲染引擎，再使用对应的Hexo渲染引擎即可。但是根据此文档修改后遇到了以下问题：  </p>
+            <h1 id="得意忘形第0期"><a href="#得意忘形第0期" class="headerlink" title="得意忘形第0期"></a>得意忘形第<strong>0</strong>期</h1><h2 id="书单"><a href="#书单" class="headerlink" title="书单"></a>书单</h2><ul>
+<li><em>tryting not to try</em> 《无为》</li>
+<li><em>Thinking,Fast and Slow</em> 《思考，快与慢》</li>
+<li><em>The Power of Habit</em> 《习惯的力量》</li>
+<li><em>Flow-The Psychology of Optimal Experience</em> 《心流 : 最优体验心理学》<h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2></li>
+</ul>
 <ol>
-<li>执行<code>npm un</code>和<code>npm i</code>命令更换Hexo渲染引擎后某些标签无法渲染，如<code>&lt;!-- more --&gt;</code>无法正常截断预览内容。</li>
-<li>在使用hexo-renderer-pandoc渲染引擎后，执行<code>hexo -g</code>出现报错。</li>
+<li>“无为”状态需要刻意练习。</li>
+<li>宗教、哲学的很多观点不能望文生义。</li>
+<li>什么是心流，如何体验<h1 id="得意忘形第1期"><a href="#得意忘形第1期" class="headerlink" title="得意忘形第1期"></a>得意忘形第<strong>1</strong>期</h1><h2 id="书单-1"><a href="#书单-1" class="headerlink" title="书单"></a>书单</h2></li>
 </ol>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>之后寻找如何在不更换渲染引擎的前提下实现渲染。发现可以直接在<code>blog_path</code>路径下执行<code>npm install hexo-renderer-mathjax --save</code>命令，再在需要渲染的post的声明中通过<code>mathjax: true</code>打开渲染即可。默认情况下关闭，提高网页的加载速度。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: 20190621_unfinished</span><br><span class="line">date: 2019-03-22 15:49:05</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>Markdown</span><br><span class="line"><span class="bullet">- </span>Latex</span><br><span class="line"><span class="bullet">- </span>Hexo</span><br><span class="line"><span class="bullet">- </span>Next</span><br><span class="line"><span class="bullet">- </span>色彩</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>unfinished</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
-<h1 id="如何更改使用Next主题Hexo博客的背景"><a href="#如何更改使用Next主题Hexo博客的背景" class="headerlink" title="如何更改使用Next主题Hexo博客的背景"></a>如何更改使用Next主题Hexo博客的背景</h1><p>在<code>\blog_path\themes\next\source\css\_custom\custom.styl</code>中添加<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#01847f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>即可将博客页面的背景设置马尔斯绿，马尔斯绿在2018年一家英国企业GF Smith举办的网上票选活动中被选为世界上最受欢迎的色彩。通过修改<code>body</code>的样式，可以实现想要的背景展示效果。如通过<code>unsplash</code>网站提供的<code>api</code>，每次访问时，从<code>unsplash</code>获取一张HarryPort主题图片作为背景。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(https://source.unsplash.com/collection/2526539/1600x900);</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">    <span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">    <span class="comment">/* 背景图片的尺寸为扩展 */</span></span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">    <span class="comment">/* 适配移动端 */</span></span><br><span class="line">    <span class="attribute">-webkit-background-size</span>: cover;</span><br><span class="line">    <span class="attribute">-o-background-size</span>: cover;</span><br><span class="line">    <span class="attribute">-moz-background-size</span>: cover;</span><br><span class="line">    <span class="attribute">-ms-background-size</span>: cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Hexo博客Next主题修改标签云样式"><a href="#Hexo博客Next主题修改标签云样式" class="headerlink" title="Hexo博客Next主题修改标签云样式"></a>Hexo博客Next主题修改标签云样式</h1><p>修改<code>hexo_init_path\themes\next\layout\page.swig</code>文件中的<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; tagcloud(&#123;min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'&#125;) &#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以设置<code>tagcloud</code>的字号、数量和色彩变化范围。</p>
+<ul>
+<li>《禅与摩托车的维修艺术》</li>
+<li><em>The 4-Hour Work Week</em> 《每周工作四小时》<h2 id="大纲-1"><a href="#大纲-1" class="headerlink" title="大纲"></a>大纲</h2></li>
+</ul>
+<ol>
+<li>扎克伯格与他2009至今每年的新年计划。</li>
+<li>阿斯伯格综合征（AS）与情绪的作用，心理咨询的作用很多时候在于帮助咨询者理解和接受那个时候为什么要那么做，并没有一定“正确”的解决方式。</li>
+<li>计划是否要告诉别人。告诉别人可以带来一些外在压力和动力，但也可能因为告诉别人获得的满足感而降低完成计划的动力。</li>
+<li>相比具体的目标，把日常可以完成的动作作为计划的内容，可以避免在计划的后期因为完不成目标产生挫败感，和因此带来的自暴自弃，更容易养成良好的习惯，做更多的事。</li>
+<li>意志力类似肌肉，可以通过锻炼增强自己的意志力，但消耗意志力的行为和计划依然是难以长久坚持下去的，尝试去改变环境和自身来使它变成一件开心的事。</li>
+<li>把会带来心理压力的大目标进行分解，分解成可执行的，感受上不会费力的小目标。</li>
+<li>环境给人的影响作用是巨大的，把自己的身体当成实验工场，试验在什么环境和条件下会提高工作效率，有比较好的状态。</li>
+<li>计划本身不重要，做计划很重要。当做好计划后，想到时大脑就会对计划中涉及到的区域进行预热。</li>
+<li>习惯的力量。核心习惯的养成会带动其它的习惯。</li>
+<li>如何选择创业的方向，别人觉得费力的，而自己觉得是在玩的事情。</li>
+<li>Just do it.</li>
+</ol>
 
           
         
@@ -529,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/java中Arrays.asList方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/Hexo-Blog-Migration-and-Synchronization/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -549,7 +537,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/21/java中Arrays.asList方法/" class="post-title-link" itemprop="url">java中Arrays.asList方法</a>
+                <a href="/2020/04/02/Hexo-Blog-Migration-and-Synchronization/" class="post-title-link" itemprop="url">Hexo Blog Migration and Synchronization</a>
               
             
           </h1>
@@ -574,47 +562,17 @@
                 
               
 
-              <time title="创建时间：2019-03-21 09:16:19" itemprop="dateCreated datePublished" datetime="2019-03-21T09:16:19+08:00">2019-03-21</time>
+              <time title="创建时间：2020-04-02 00:30:27 / 修改时间：00:31:35" itemprop="dateCreated datePublished" datetime="2020-04-02T00:30:27+08:00">2020-04-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-01 23:48:14" itemprop="dateModified" datetime="2020-04-01T23:48:14+08:00">2020-04-01</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/arranging/" itemprop="url" rel="index"><span itemprop="name">arranging</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -623,7 +581,7 @@
 
           
           
-            <span id="/2019/03/21/java中Arrays.asList方法/" class="leancloud_visitors" data-flag-title="java中Arrays.asList方法">
+            <span id="/2020/04/02/Hexo-Blog-Migration-and-Synchronization/" class="leancloud_visitors" data-flag-title="Hexo Blog Migration and Synchronization">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -655,21 +613,29 @@
 
       
         
-          <h1 id="java中Arrays-asList-para1-para2…-方法"><a href="#java中Arrays-asList-para1-para2…-方法" class="headerlink" title="java中Arrays.asList(para1, para2…)方法"></a>java中Arrays.asList(para1, para2…)方法</h1><h2 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h2><p>asList</p>
-<p>@SafeVarargs</p>
-<p>public static <t> List<t> asList(T… a)</t></t></p>
-<p>Returns a fixed-size list backed by the specified array. (Changes to the returned list “write through” to the array.)</p>
-<p>This method acts as bridge between array-based and collection-based APIs, in combination with Collection.toArray(). The returned list is serializable and implements RandomAccess. </p>
-<p>This method also provides a convenient way to create a fixed-size list initialized to contain several elements:</p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/21/java中Arrays.asList方法/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
+            <h1 id="如何迁移hexo博客至另一台主机（windows操作系统"><a href="#如何迁移hexo博客至另一台主机（windows操作系统" class="headerlink" title="如何迁移hexo博客至另一台主机（windows操作系统)"></a>如何迁移hexo博客至另一台主机（windows操作系统)</h1><p>由A主机迁移至另一台主机B</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+<li>在新PC上安装下列应用程序：</li>
+</ol>
+<ul>
+<li>Node.js (Should be at least nodejs 6.9)</li>
+<li>Git<h2 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h2></li>
+</ul>
+<ol>
+<li>拷贝主机A中的<code>blog</code>文件夹至主机B的任意目录,如<code>D:\blog</code>。</li>
+<li><p>在主机A控制台执行<code>npm config ls</code>命令，查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">builtin config undefined</span><br><span class="line">prefix = &quot;path&quot;</span><br></pre></td></tr></table></figure>
+<p>path下的node_modules是node.js全局安装的路径，主机A路径是<br><code>C:\Users\user\AppData\Roaming\npm\node_modules</code>，拷贝此路径下的<code>hexo-cli</code>文件夹至主机B对应目录下。</p>
+</li>
+<li>若使用<code>VS Code</code>作为IDE，想继续使用相关插件，则需要拷贝主机A<code>Microsoft VS Code install path</code>的<code>\resources\app</code>路径下的<code>extensions</code>文件夹至主机B <code>VS Code</code>对应目录下。<h2 id="修改主机B的环境变量"><a href="#修改主机B的环境变量" class="headerlink" title="修改主机B的环境变量"></a>修改主机B的环境变量</h2></li>
+<li>在系统变量中的<code>Path</code>变量中添加npm的安装路径<code>C:\Users\user\AppData\Roaming\npm</code>。</li>
+<li>在系统变量中的<code>Path</code>变量中添加node.js的安装路径。</li>
+<li>在<code>blog</code>文件夹下<code>\node_modules\.bin</code>目录下有Hexo的windows系统脚本文件，在系统变量中的<code>Path</code>中添加此路径：<code>D:\blog\node_modules\.bin</code>。<h1 id="如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客"><a href="#如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客" class="headerlink" title="如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客"></a>如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客</h1></li>
+</ol>
+<p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">知乎</a></p>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -724,7 +690,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/CSS选择器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/Lambda-in-Java/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -744,7 +710,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/05/CSS选择器/" class="post-title-link" itemprop="url">CSS选择器</a>
+                <a href="/2020/04/02/Lambda-in-Java/" class="post-title-link" itemprop="url">Lambda in Java</a>
               
             
           </h1>
@@ -769,47 +735,17 @@
                 
               
 
-              <time title="创建时间：2019-03-05 10:27:56" itemprop="dateCreated datePublished" datetime="2019-03-05T10:27:56+08:00">2019-03-05</time>
+              <time title="创建时间：2020-04-02 00:08:32 / 修改时间：00:38:46" itemprop="dateCreated datePublished" datetime="2020-04-02T00:08:32+08:00">2020-04-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-01 23:48:03" itemprop="dateModified" datetime="2020-04-01T23:48:03+08:00">2020-04-01</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/arranging/" itemprop="url" rel="index"><span itemprop="name">arranging</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -818,7 +754,7 @@
 
           
           
-            <span id="/2019/03/05/CSS选择器/" class="leancloud_visitors" data-flag-title="CSS选择器">
+            <span id="/2020/04/02/Lambda-in-Java/" class="leancloud_visitors" data-flag-title="Lambda in Java">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -850,17 +786,21 @@
 
       
         
-          <h1 id="CSS选择某一div下的一种元素"><a href="#CSS选择某一div下的一种元素" class="headerlink" title="CSS选择某一div下的一种元素"></a>CSS选择某一div下的一种元素</h1><p>CSS:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .a p&#123;</span></span><br><span class="line"><span class="undefined">        text-indent: 2em;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Ti amo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>banana<span class="tag">&lt;/<span class="name">p</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/05/CSS选择器/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
+            <h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><h2 id="什么是lambda"><a href="#什么是lambda" class="headerlink" title="什么是lambda"></a>什么是lambda</h2><p>“Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（和数学领域中lambda不同）。</p>
+<p>使用lambda可以使代码更简洁。</p>
+<h2 id="lambda-in-java-8"><a href="#lambda-in-java-8" class="headerlink" title="lambda in java 8"></a>lambda in java 8</h2><h2 id="A-simple-example"><a href="#A-simple-example" class="headerlink" title="A simple example"></a>A simple example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// no lambda</span></span><br><span class="line">Runnable noLambda = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Running without Lambda"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// java import lambda since 1.8</span></span><br><span class="line">Runnable useLambda = () -&gt; </span><br><span class="line">    System.out.println(<span class="string">"Running from Lambda"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>可选类型声明：不需要声明参数类型，编译器可以统一识别参数值。</li>
+<li>可选的参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号。</li>
+<li>可选的大括号：如果主体包含了一个语句，就不需要使用大括号。</li>
+<li>可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Java8Tester tester = <span class="keyword">new</span> Java8Tester();</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 类型声明</span></span><br><span class="line">      MathOperation addition = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用类型声明</span></span><br><span class="line">      MathOperation subtraction = (a, b) -&gt; a - b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 大括号中的返回语句</span></span><br><span class="line">      MathOperation multiplication = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; &#123; <span class="keyword">return</span> a * b; &#125;;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 没有大括号及返回语句</span></span><br><span class="line">      MathOperation division = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a / b;</span><br><span class="line">        </span><br><span class="line">      System.out.println(<span class="string">"10 + 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, addition));</span><br><span class="line">      System.out.println(<span class="string">"10 - 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, subtraction));</span><br><span class="line">      System.out.println(<span class="string">"10 x 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, multiplication));</span><br><span class="line">      System.out.println(<span class="string">"10 / 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, division));</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用括号</span></span><br><span class="line">      GreetingService greetService1 = message -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 用括号</span></span><br><span class="line">      GreetingService greetService2 = (message) -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      greetService1.sayMessage(<span class="string">"Runoob"</span>);</span><br><span class="line">      greetService2.sayMessage(<span class="string">"Google"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">MathOperation</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">operation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">GreetingService</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">sayMessage</span><span class="params">(String message)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">operate</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, MathOperation mathOperation)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> mathOperation.operation(a, b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="result"><a href="#result" class="headerlink" title="result"></a>result</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ javac Java8Tester.java </span><br><span class="line">$ java Java8Tester</span><br><span class="line">10 + 5 = 15</span><br><span class="line">10 - 5 = 5</span><br><span class="line">10 x 5 = 50</span><br><span class="line">10 / 5 = 2</span><br><span class="line">Hello Runoob</span><br><span class="line">Hello Google</span><br></pre></td></tr></table></figure>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p><code>lambda</code>表达式只能引用标记了<code>final</code>的外层局部变量，即不能在<code>lambda</code>内部修改定义在域外的局部变量，否则会编译错误。</p>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -915,7 +855,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/Spring3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/Markdown Learing Notes/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -935,7 +875,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/04/Spring3/" class="post-title-link" itemprop="url">Spring学习笔记（三）：显式装配</a>
+                <a href="/2020/04/01/Markdown Learing Notes/" class="post-title-link" itemprop="url">Markdown Learing Notes</a>
               
             
           </h1>
@@ -960,7 +900,7 @@
                 
               
 
-              <time title="创建时间：2019-03-04 14:40:23" itemprop="dateCreated datePublished" datetime="2019-03-04T14:40:23+08:00">2019-03-04</time>
+              <time title="创建时间：2020-04-01 23:47:43" itemprop="dateCreated datePublished" datetime="2020-04-01T23:47:43+08:00">2020-04-01</time>
             
 
             
@@ -977,30 +917,12 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:38:52" itemprop="dateModified" datetime="2019-06-21T17:38:52+08:00">2019-06-21</time>
+                <time title="修改时间：2020-04-02 01:41:10" itemprop="dateModified" datetime="2020-04-02T01:41:10+08:00">2020-04-02</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1009,197 +931,7 @@
 
           
           
-            <span id="/2019/03/04/Spring3/" class="leancloud_visitors" data-flag-title="Spring学习笔记（三）：显式装配">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="显式装配Bean"><a href="#显式装配Bean" class="headerlink" title="显式装配Bean"></a>显式装配Bean</h1><p>有时候自动化配置的方案行不通，比如说，你想要将第三方库中的组件装配到你的应用中，在这种情况下，没有办法在它的类上添加@Component和@Autowired注解。在进行显式配置的时候，有两种可选方案：JavaConfig和XML。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/04/Spring3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/二叉树的中序遍历/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bran">
-      <meta itemprop="description" content="一个麻瓜">
-      <meta itemprop="image" content="/images/icebear-grin.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bran's Pensieve">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/27/二叉树的中序遍历/" class="post-title-link" itemprop="url">二叉树的中序遍历</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-27 15:15:09" itemprop="dateCreated datePublished" datetime="2019-02-27T15:15:09+08:00">2019-02-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-04-01 23:49:35" itemprop="dateModified" datetime="2020-04-01T23:49:35+08:00">2020-04-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/arranging/" itemprop="url" rel="index"><span itemprop="name">arranging</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2019/02/27/二叉树的中序遍历/" class="leancloud_visitors" data-flag-title="二叉树的中序遍历">
+            <span id="/2020/04/01/Markdown Learing Notes/" class="leancloud_visitors" data-flag-title="Markdown Learing Notes">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -1233,12 +965,710 @@
         
           <h1 id="丑奴儿·书博山道中壁"><a href="#丑奴儿·书博山道中壁" class="headerlink" title="丑奴儿·书博山道中壁"></a>丑奴儿·书博山道中壁</h1><blockquote align="center">丑奴儿·书博山道中壁<br>辛弃疾&emsp;宋<br>   少年不识愁滋味，爱上层楼。爱上层楼。为赋新词强说愁。<br>   而今识尽愁滋味，欲说还休。欲说还休。却道天凉好个秋。</blockquote>
 
-
-<h1 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h1><p>Syntactic sugar，是由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）创造的的一个词语，指那些没有给计算机语言添加新功能，而只是对人类来说更“甜蜜”的语法。</p>
+<h1 id="使用markdown书写数学公式"><a href="#使用markdown书写数学公式" class="headerlink" title="使用markdown书写数学公式"></a>使用markdown书写数学公式</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>
+<li><p>行内公式，在一对<code>$</code>之间</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">贝叶斯定理：$P(A|B)=\frac&#123;P(A|B)P(A)&#125;&#123;P(B)&#125;$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>公式独立一行，在一对<code>$$</code>之间，必须在新的一行。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">贝叶斯定理：</span><br><span class="line"></span><br><span class="line">$$P(A|B)=\frac&#123;P(A|B)P(A)&#125;&#123;P(B)&#125;$$</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>贝叶斯定理：</p>
+<p>$$P(A|B)=\frac{P(A|B)P(A)}{P(B)}$$</p>
+<h2 id="在VScode中下载相关插件"><a href="#在VScode中下载相关插件" class="headerlink" title="在VScode中下载相关插件"></a>在VScode中下载相关插件</h2><p>在vscode搜索markdown下载插件markdown-all-in-one和markdown+math。<br>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/02/27/二叉树的中序遍历/#more" rel="contents">
+              <a class="btn" href="/2020/04/01/Markdown Learing Notes/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/Latex Learning Notes/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/01/Latex Learning Notes/" class="post-title-link" itemprop="url">Latex Learning Notes</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-01 23:43:40" itemprop="dateCreated datePublished" datetime="2020-04-01T23:43:40+08:00">2020-04-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-02 00:32:57" itemprop="dateModified" datetime="2020-04-02T00:32:57+08:00">2020-04-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/04/01/Latex Learning Notes/" class="leancloud_visitors" data-flag-title="Latex Learning Notes">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="latex写分数"><a href="#latex写分数" class="headerlink" title="latex写分数"></a>latex写分数</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;A&#125;&#123;B&#125;</span><br></pre></td></tr></table></figure>
+<p>$$\frac{A}{B}$$</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/" class="post-title-link" itemprop="url">Linear Algebra Learing Notes 1：Linear transformation</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-30 00:08:00" itemprop="dateCreated datePublished" datetime="2020-03-30T00:08:00+08:00">2020-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-02 00:23:35" itemprop="dateModified" datetime="2020-04-02T00:23:35+08:00">2020-04-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/" class="leancloud_visitors" data-flag-title="Linear Algebra Learing Notes 1：Linear transformation">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Linear-transformation-线性变换"><a href="#Linear-transformation-线性变换" class="headerlink" title="Linear transformation 线性变换"></a>Linear transformation 线性变换</h1><h2 id="Matrices-as-Linear-transformations"><a href="#Matrices-as-Linear-transformations" class="headerlink" title="Matrices as Linear transformations"></a>Matrices as Linear transformations</h2><p>Unfortunately, no one can be told what the <strong>Matrix</strong> is. You have to see it for yourself.</p>
+<h2 id="transformation"><a href="#transformation" class="headerlink" title="transformation"></a>transformation</h2><ul>
+<li>Transformation is essentially a fancy word for “function”. Well, it’s to be suggestive of a certain way–using movement to visualize this input-output relation.</li>
+<li>Vector input and Vector output
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/通过分支管理hexo博客与Markdown超链接/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/30/通过分支管理hexo博客与Markdown超链接/" class="post-title-link" itemprop="url">通过分支管理hexo博客与Mrakdown超链接</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-30 00:07:41" itemprop="dateCreated datePublished" datetime="2020-03-30T00:07:41+08:00">2020-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-02 01:24:27" itemprop="dateModified" datetime="2020-04-02T01:24:27+08:00">2020-04-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/03/30/通过分支管理hexo博客与Markdown超链接/" class="leancloud_visitors" data-flag-title="通过分支管理hexo博客与Mrakdown超链接">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="github网站上新建分支名称"><a href="#github网站上新建分支名称" class="headerlink" title="github网站上新建分支名称"></a>github网站上新建分支名称</h1><p><a href="https://help.github.com/en/articles/creating-and-deleting-branches-within-your-repository" target="_blank" rel="noopener">gtihub</a></p>
+<h1 id="git如何查看分支"><a href="#git如何查看分支" class="headerlink" title="git如何查看分支"></a>git如何查看分支</h1><ul>
+<li>查看本地分支 <code>git branch</code></li>
+<li>查看远程分支 <code>git branch -a</code>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/03/30/通过分支管理hexo博客与Markdown超链接/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/尾递归/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/30/尾递归/" class="post-title-link" itemprop="url">尾递归</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-30 00:07:41" itemprop="dateCreated datePublished" datetime="2020-03-30T00:07:41+08:00">2020-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-02 01:25:35" itemprop="dateModified" datetime="2020-04-02T01:25:35+08:00">2020-04-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/03/30/尾递归/" class="leancloud_visitors" data-flag-title="尾递归">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="尾递归（tail-recursion"><a href="#尾递归（tail-recursion" class="headerlink" title="尾递归（tail recursion)"></a>尾递归（tail recursion)</h1><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// not tail recursion</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> i*factorial(i<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// tail recursion</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorialTR</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> result)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> factorialTR(i<span class="number">-1</span>, i*result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/03/30/尾递归/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1298,7 +1728,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/12/Spring2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/String.intern() Method in Java/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -1318,7 +1748,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/12/Spring2/" class="post-title-link" itemprop="url">Spring学习笔记（二）：自动装配</a>
+                <a href="/2020/03/30/String.intern() Method in Java/" class="post-title-link" itemprop="url">String.intern() Method in Java</a>
               
             
           </h1>
@@ -1343,7 +1773,7 @@
                 
               
 
-              <time title="创建时间：2019-02-12 10:11:19" itemprop="dateCreated datePublished" datetime="2019-02-12T10:11:19+08:00">2019-02-12</time>
+              <time title="创建时间：2020-03-30 00:07:41" itemprop="dateCreated datePublished" datetime="2020-03-30T00:07:41+08:00">2020-03-30</time>
             
 
             
@@ -1360,30 +1790,12 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:38:52" itemprop="dateModified" datetime="2019-06-21T17:38:52+08:00">2019-06-21</time>
+                <time title="修改时间：2020-04-02 00:38:15" itemprop="dateModified" datetime="2020-04-02T00:38:15+08:00">2020-04-02</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1392,7 +1804,7 @@
 
           
           
-            <span id="/2019/02/12/Spring2/" class="leancloud_visitors" data-flag-title="Spring学习笔记（二）：自动装配">
+            <span id="/2020/03/30/String.intern() Method in Java/" class="leancloud_visitors" data-flag-title="String.intern() Method in Java">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -1424,17 +1836,12 @@
 
       
         
-          <h1 id="Spring配置的方案"><a href="#Spring配置的方案" class="headerlink" title="Spring配置的方案"></a>Spring配置的方案</h1><p>Spring提供了三种主要的装配机制：</p>
-<ul>
-<li>隐式的bean发现机制和自动装配</li>
-<li>在java中进行显示配置</li>
-<li>在xml中进行显式配置  </li>
-</ul>
-<p>建议尽可能的使用自动配置的机制，显式配置越少越好。当必须要显示配置时，优先使用类型安全并且比XML更加强大的JavaConfig。最后，当想使用便利的XML命名空间并且JavaConfig中没用相同实现时，使用XML。<br>
+          <h1 id="String-intern"><a href="#String-intern" class="headerlink" title="String.intern()"></a><code>String.intern()</code></h1><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"Hello"</span>;</span><br><span class="line">String s2 = <span class="keyword">new</span> String(<span class="string">"Hello"</span>);</span><br><span class="line"><span class="keyword">if</span> (s1 == s2)</span><br><span class="line">    System.out.println(<span class="string">"s1 == s2"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    System.out.println(<span class="string">"s1 != s2"</span>);</span><br><span class="line"><span class="keyword">if</span> (s1.equals(s2)) </span><br><span class="line">    System.out.println(<span class="string">"s1 equals s2"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    System.out.println(<span class="string">"s1 not equals s2"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s1 != s2</span><br><span class="line">s1 equals s2</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/02/12/Spring2/#more" rel="contents">
+              <a class="btn" href="/2020/03/30/String.intern() Method in Java/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1442,7 +1849,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1494,7 +1901,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Spring1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/The Equals in Java/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -1514,7 +1921,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/11/Spring1/" class="post-title-link" itemprop="url">Spring学习笔记（一）：初识Spring</a>
+                <a href="/2020/03/30/The Equals in Java/" class="post-title-link" itemprop="url">JAVA中equals()和==有什么不同？</a>
               
             
           </h1>
@@ -1539,7 +1946,7 @@
                 
               
 
-              <time title="创建时间：2019-02-11 19:01:26" itemprop="dateCreated datePublished" datetime="2019-02-11T19:01:26+08:00">2019-02-11</time>
+              <time title="创建时间：2020-03-30 00:03:54" itemprop="dateCreated datePublished" datetime="2020-03-30T00:03:54+08:00">2020-03-30</time>
             
 
             
@@ -1556,30 +1963,12 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-21 17:41:06" itemprop="dateModified" datetime="2019-06-21T17:41:06+08:00">2019-06-21</time>
+                <time title="修改时间：2020-04-02 00:38:24" itemprop="dateModified" datetime="2020-04-02T00:38:24+08:00">2020-04-02</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1588,7 +1977,7 @@
 
           
           
-            <span id="/2019/02/11/Spring1/" class="leancloud_visitors" data-flag-title="Spring学习笔记（一）：初识Spring">
+            <span id="/2020/03/30/The Equals in Java/" class="leancloud_visitors" data-flag-title="JAVA中equals()和==有什么不同？">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -1620,182 +2009,17 @@
 
       
         
-          <h1 id="DI-依赖注入"><a href="#DI-依赖注入" class="headerlink" title="DI(依赖注入)"></a>DI(依赖注入)</h1><p>对象的依赖关系由系统中负责协调各自对象的第三方组件在创建对象的时候进行设定。对象无需创建或者管理他们的依赖关系，降低了代码的耦合性。<br>
+          <h1 id="equals-和-有什么不同？"><a href="#equals-和-有什么不同？" class="headerlink" title="equals()和==有什么不同？"></a><code>equals()</code>和<code>==</code>有什么不同？</h1><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"Hello"</span>;</span><br><span class="line">String s2 = <span class="keyword">new</span> String(<span class="string">"Hello"</span>);</span><br><span class="line"><span class="keyword">if</span> (s1 == s2)</span><br><span class="line">    System.out.println(<span class="string">"s1 == s2"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    System.out.println(<span class="string">"s1 != s2"</span>);</span><br><span class="line"><span class="keyword">if</span> (s1.equals(s2)) </span><br><span class="line">    System.out.println(<span class="string">"s1 equals s2"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    System.out.println(<span class="string">"s1 not equals s2"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s1 != s2</span><br><span class="line">s1 equals s2</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/02/11/Spring1/#more" rel="contents">
+              <a class="btn" href="/2020/03/30/The Equals in Java/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
           
           <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/Hello/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bran">
-      <meta itemprop="description" content="一个麻瓜">
-      <meta itemprop="image" content="/images/icebear-grin.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bran's Pensieve">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/28/Hello/" class="post-title-link" itemprop="url">Hello!</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-28 08:02:01" itemprop="dateCreated datePublished" datetime="2019-01-28T08:02:01+08:00">2019-01-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-11 19:44:46" itemprop="dateModified" datetime="2019-02-11T19:44:46+08:00">2019-02-11</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2019/01/28/Hello/" class="leancloud_visitors" data-flag-title="Hello!">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>欢迎来到一个麻瓜的记忆瓶。</p>
-
-          
         
       
     </div>
@@ -1839,7 +2063,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1884,7 +2108,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1899,11 +2123,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分院帽</span>
                   </a>
                 </div>
@@ -1944,7 +2164,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">魔杖</span>
                   </a>
                 </div>
@@ -2219,7 +2459,9 @@
   
     
       
-        
+    
+      
+    
       
     
       
@@ -2238,43 +2480,6 @@
     
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow: auto hidden;
-}
-</style>
-
-    
   
 
 
