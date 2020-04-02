@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="LeetCode Q3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
+  <meta name="description" content="LeetCode M3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
 <meta name="keywords" content="Algorithms,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode M3 Longest Substring Without Repeating Characters">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/Leetcode-M3-Longest-Substring-Without-Repeating-Characters/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="LeetCode Q3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta property="og:description" content="LeetCode M3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T18:06:43.792Z">
+<meta property="og:updated_time" content="2020-04-02T06:24:20.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode M3 Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="LeetCode Q3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
+<meta name="twitter:description" content="LeetCode M3 Longest Substring Without Repeating CharactersGiven a string, find the length of the longest substring without repeating characters.">
 
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:19:14 / 修改时间：02:06:43" itemprop="dateCreated datePublished" datetime="2020-04-02T01:19:14+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 01:19:14 / 修改时间：14:24:20" itemprop="dateCreated datePublished" datetime="2020-04-02T01:19:14+08:00">2020-04-02</time>
             
 
             
@@ -390,6 +390,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -430,7 +448,7 @@
       
 
       
-        <h1 id="LeetCode-Q3-Longest-Substring-Without-Repeating-Characters"><a href="#LeetCode-Q3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="LeetCode Q3 Longest Substring Without Repeating Characters"></a>LeetCode Q3 Longest Substring Without Repeating Characters</h1><p>Given a string, find the length of the longest substring without repeating characters.<br><a id="more"></a></p>
+        <h1 id="LeetCode-M3-Longest-Substring-Without-Repeating-Characters"><a href="#LeetCode-M3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="LeetCode M3 Longest Substring Without Repeating Characters"></a>LeetCode M3 Longest Substring Without Repeating Characters</h1><p>Given a string, find the length of the longest substring without repeating characters.<br><a id="more"></a></p>
 <h2 id="THINKING"><a href="#THINKING" class="headerlink" title="THINKING"></a>THINKING</h2><ul>
 <li>首先考虑为空和字符串s仅包含一个字符的情况，直接返回s本身。</li>
 <li>之后考虑复杂情况，将s赋值给字符数组str，通过head和tail记录不重复子字符串的起始和终止字符在str中的下标(之后发现并不需要记录tail)，len记录当前不重复子字符串的最大长度。<ul>
@@ -447,8 +465,8 @@
 <p>Memory Usage: 40.3 MB, beats 9.23 % of java submissions.</p>
 <p>对char[]进行操作，以空间换时间。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(lengthOfLongestSubstring(<span class="string">"a"</span>));</span><br><span class="line">		System.exit(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> tail = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">char</span>[] str=s.toCharArray();</span><br><span class="line">    	<span class="keyword">if</span>(s.length()==<span class="number">0</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">if</span>(s.length()==<span class="number">1</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">int</span> j;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;str.length;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(j=head;j&lt;=tail;j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str[i]==str[j]) &#123;</span><br><span class="line">					head = j+<span class="number">1</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tail++;</span><br><span class="line">			<span class="keyword">if</span>(tail-head+<span class="number">1</span>&gt;len) &#123;</span><br><span class="line">				len=tail-head+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="讨论区得票最高的答案"><a href="#讨论区得票最高的答案" class="headerlink" title="讨论区得票最高的答案"></a>讨论区得票最高的答案</h3><p>思路大体相同，但通过使用HashMap数据结构、String类的<br>charAt方法和Math类的max方法，使代码更加简洁。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.length()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>, j=<span class="number">0</span>; i&lt;s.length(); ++i)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(s.charAt(i)))&#123;</span><br><span class="line">                j = Math.max(j,map.get( )+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">            max = Math.max(max,i-j+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="讨论区得票最高的答案"><a href="#讨论区得票最高的答案" class="headerlink" title="讨论区得票最高的答案"></a>讨论区得票最高的答案</h3><p>思路大体相同，但通过使用HashMap数据结构、String类的charAt方法和Math类的max方法，使代码更加简洁。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s.length()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">	<span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>, j=<span class="number">0</span>; i&lt;s.length(); ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span> (map.containsKey(s.charAt(i)))&#123;</span><br><span class="line">			j = Math.max(j,map.get( )+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		map.put(s.charAt(i),i);</span><br><span class="line">		max = Math.max(max,i-j+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -571,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -586,7 +604,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分院帽</span>
                   </a>
                 </div>
@@ -647,7 +675,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">魔杖</span>
                   </a>
                 </div>
@@ -701,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-Q3-Longest-Substring-Without-Repeating-Characters"><span class="nav-number">1.</span> <span class="nav-text">LeetCode Q3 Longest Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#THINKING"><span class="nav-number">1.1.</span> <span class="nav-text">THINKING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLUTION"><span class="nav-number">1.2.</span> <span class="nav-text">SOLUTION</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MY-SOLUTION"><span class="nav-number">1.2.1.</span> <span class="nav-text">MY SOLUTION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论区得票最高的答案"><span class="nav-number">1.2.2.</span> <span class="nav-text">讨论区得票最高的答案</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-M3-Longest-Substring-Without-Repeating-Characters"><span class="nav-number">1.</span> <span class="nav-text">LeetCode M3 Longest Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#THINKING"><span class="nav-number">1.1.</span> <span class="nav-text">THINKING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLUTION"><span class="nav-number">1.2.</span> <span class="nav-text">SOLUTION</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MY-SOLUTION"><span class="nav-number">1.2.1.</span> <span class="nav-text">MY SOLUTION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨论区得票最高的答案"><span class="nav-number">1.2.2.</span> <span class="nav-text">讨论区得票最高的答案</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
