@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
 <meta property="og:description" content="String.intern()Example12345678910String s1 = &quot;Hello&quot;;String s2 = new String(&quot;Hello&quot;);if (s1 == s2)    System.out.println(&quot;s1 == s2&quot;);else    System.out.println(&quot;s1 != s2&quot;);if (s1.equals(s2))     Syste">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T16:38:15.850Z">
+<meta property="og:updated_time" content="2020-04-07T15:48:37.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String.intern() Method in Java">
 <meta name="twitter:description" content="String.intern()Example12345678910String s1 = &quot;Hello&quot;;String s2 = new String(&quot;Hello&quot;);if (s1 == s2)    System.out.println(&quot;s1 == s2&quot;);else    System.out.println(&quot;s1 != s2&quot;);if (s1.equals(s2))     Syste">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-02 00:38:15" itemprop="dateModified" datetime="2020-04-02T00:38:15+08:00">2020-04-02</time>
+                <time title="修改时间：2020-04-07 23:48:37" itemprop="dateModified" datetime="2020-04-07T23:48:37+08:00">2020-04-07</time>
               
             
           </span>
@@ -457,7 +457,18 @@
 <p>See The Java™ Language Specification:<br>3.10.5 String Literals</p>
 </blockquote>
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p><code>intern()</code>方法设计的初衷，就是重用<code>String</code>对象，以节省内存消耗，因此在数据规模较大时，GC的时间也会比不使用<code>intern()</code>短。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>JDK1.7后，常量池被放入到了堆空间中。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>在 JAVA 语言中有8中基本类型和一种比较特殊的类型String。这些类型为了使他们在运行过程中速度更快，更节省内存，都提供了一种常量池的概念。常量池就类似一个JAVA系统级别提供的缓存。</p>
+<p>8种基本类型的常量池都是系统协调的，String类型的常量池比较特殊。它的主要使用方法有两种：</p>
+<ul>
+<li>直接使用双引号声明出来的String对象会直接存储在常量池中。</li>
+<li>如果不是用双引号声明的String对象，可以使用String提供的intern方法。intern 方法会从字符串常量池中查询当前字符串是否存在，若不存在就会将当前字符串放入常量池中。</li>
+</ul>
+<p>在 Jdk6 以及以前的版本中，字符串的常量池是放在堆的 Perm 区的，Perm 区是一个类静态的区域，主要存储一些加载类的信息，常量池，方法片段等内容，默认大小只有4m，一旦常量池中大量使用 intern 是会直接产生<code>java.lang.OutOfMemoryError: PermGen space</code>错误的。 所以在 jdk7 的版本中，字符串常量池已经从 Perm 区移到正常的 Java Heap(堆空间) 区域了。为什么要移动，Perm 区域太小是一个主要原因。而 jdk8 已经直接取消了 Perm 区域，而新建立了一个元区域。应该是 jdk 开发者认为 Perm 区域已经不适合现在 JAVA 的发展了。</p>
+<p>JDK1.7 版本对 intern 操作和常量池都做了一定的修改。主要包括2点：</p>
+<ul>
+<li>将String常量池 从 Perm 区移动到了 Java Heap区</li>
+<li>String#intern 方法时，如果存在堆中的对象，会直接保存对象的引用，而不会重新创建对象。</li>
+</ul>
 
       
     </div>
@@ -494,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/30/Git Learning Notes/" rel="next" title="Git Learning Notes">
-                <i class="fa fa-chevron-left"></i> Git Learning Notes
+              <a href="/2020/03/30/尾递归/" rel="next" title="尾递归">
+                <i class="fa fa-chevron-left"></i> 尾递归
               </a>
             
           </div>
@@ -578,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
