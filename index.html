@@ -267,7 +267,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>魔法课程</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>课程</a>
 
   </li>
         
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/Java中的浅拷贝与深拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/Shallow Copy and Deep Copy in Java/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -356,7 +356,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2020/04/07/Java中的浅拷贝与深拷贝/" class="post-title-link" itemprop="url">Java中的浅拷贝与深拷贝</a>
+                <a href="/2020/04/07/Shallow Copy and Deep Copy in Java/" class="post-title-link" itemprop="url">Shallow Copy and Deep Copy in Java</a>
               
             
           </h1>
@@ -381,12 +381,24 @@
                 
               
 
-              <time title="创建时间：2020-04-07 23:49:14 / 修改时间：23:54:11" itemprop="dateCreated datePublished" datetime="2020-04-07T23:49:14+08:00">2020-04-07</time>
+              <time title="创建时间：2020-04-07 23:49:14" itemprop="dateCreated datePublished" datetime="2020-04-07T23:49:14+08:00">2020-04-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-08 23:57:16" itemprop="dateModified" datetime="2020-04-08T23:57:16+08:00">2020-04-08</time>
               
             
           </span>
@@ -400,7 +412,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">魔法课程</span>
+                <span class="post-meta-item-text">课程</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
@@ -418,7 +430,7 @@
 
           
           
-            <span id="/2020/04/07/Java中的浅拷贝与深拷贝/" class="leancloud_visitors" data-flag-title="Java中的浅拷贝与深拷贝">
+            <span id="/2020/04/07/Shallow Copy and Deep Copy in Java/" class="leancloud_visitors" data-flag-title="Shallow Copy and Deep Copy in Java">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -451,7 +463,19 @@
       
         
           
-            
+            <h1 id="Object-Copy"><a href="#Object-Copy" class="headerlink" title="Object Copy"></a>Object Copy</h1><p>Java中的对象拷贝(Object Copy)指的是将一个对象的所有属性（成员变量）拷贝到另一个有着相同类类型的对象中去。</p>
+<p>在程序中拷贝对象是很常见的，主要是为了在新的上下文环境中复用现有对象的部分或全部数据。</p>
+<p>Java中的对象拷贝主要分为：浅拷贝(Shallow Copy)、深拷贝(Deep Copy)。</p>
+<p>Java中的数据类型分为基本数据类型和引用数据类型。在用进行赋值操作(<code>=</code>)、用作方法参数或返回值时：</p>
+<ul>
+<li>对于基本数据类型（<code>boolean, byte, short, char, int, float, double, long</code> 8 种），进行的是值传递。</li>
+<li>而对于引用数据类型，是引用（地址）传递。<h1 id="Shallow-Copy"><a href="#Shallow-Copy" class="headerlink" title="Shallow Copy"></a>Shallow Copy</h1>浅拷贝（Shallow Copy）只复制当前的对象，但不复制该对象内部的引用（在堆内存中从新创建空间，内容相同，但地址不同）。</li>
+</ul>
+<ol>
+<li>对于数据类型是基本数据类型的成员变量，浅拷贝会直接进行值传递，也就是将该属性值复制一份给新的对象。因为是两份不同的数据，所以对其中一个对象的该成员变量值进行修改，不会影响另一个对象拷贝得到的数据。</li>
+<li>对于数据类型是引用数据类型的成员变量，比如说成员变量是某个数组、某个类的对象等，那么浅拷贝会进行引用传递，也就是只是将该成员变量的引用值（内存地址）复制一份给新的对象。因为实际上两个对象的该成员变量都指向同一个实例。在这种情况下，在一个对象中修改该成员变量会影响到另一个对象的该成员变量值。<h1 id="Deep-Copy"><a href="#Deep-Copy" class="headerlink" title="Deep Copy"></a>Deep Copy</h1>对对象内部所有对象的引用均复制，每个引用对象创建一个实例并复制实例。</li>
+</ol>
+
           
         
       
@@ -583,7 +607,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">魔法课程</span>
+                <span class="post-meta-item-text">课程</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/" itemprop="url" rel="index"><span itemprop="name">Algorithms</span></a></span>
@@ -1239,7 +1263,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">魔法课程</span>
+                <span class="post-meta-item-text">课程</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
@@ -1417,7 +1441,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">魔法课程</span>
+                <span class="post-meta-item-text">课程</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a></span>
@@ -1755,7 +1779,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">魔法课程</span>
+                <span class="post-meta-item-text">课程</span>
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
@@ -2103,7 +2127,7 @@ The order of your output does not matter.
                       
                     
                     <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">魔法课程</span>
+                    <span class="site-state-item-name">课程</span>
                   </a>
                 </div>
               
