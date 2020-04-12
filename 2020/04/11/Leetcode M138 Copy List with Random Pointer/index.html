@@ -92,24 +92,24 @@
 
 
 
-  <meta name="description" content="尾递归（tail recursion)Code1234567891011121314151617181920// not tail recursionint factorial(int i)&amp;#123;    if(i &amp;lt; 0) &amp;#123;        return false;    &amp;#125; else if (i == 1)&amp;#123;        return 1;    &amp;">
+  <meta name="description" content="DescriptionA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list. The Linked List is repres">
 <meta property="og:type" content="article">
-<meta property="og:title" content="尾递归">
-<meta property="og:url" content="http://yoursite.com/2020/03/30/尾递归/index.html">
+<meta property="og:title" content="Leetcode M138 Copy List with Random Pointer">
+<meta property="og:url" content="http://yoursite.com/2020/04/11/Leetcode M138 Copy List with Random Pointer/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="尾递归（tail recursion)Code1234567891011121314151617181920// not tail recursionint factorial(int i)&amp;#123;    if(i &amp;lt; 0) &amp;#123;        return false;    &amp;#125; else if (i == 1)&amp;#123;        return 1;    &amp;">
+<meta property="og:description" content="DescriptionA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list. The Linked List is repres">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T06:24:20.439Z">
+<meta property="og:updated_time" content="2020-04-12T15:50:18.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尾递归">
-<meta name="twitter:description" content="尾递归（tail recursion)Code1234567891011121314151617181920// not tail recursionint factorial(int i)&amp;#123;    if(i &amp;lt; 0) &amp;#123;        return false;    &amp;#125; else if (i == 1)&amp;#123;        return 1;    &amp;">
+<meta name="twitter:title" content="Leetcode M138 Copy List with Random Pointer">
+<meta name="twitter:description" content="DescriptionA linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list. The Linked List is repres">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/30/尾递归/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/11/Leetcode M138 Copy List with Random Pointer/">
 
 
 
@@ -119,7 +119,7 @@
   };
 </script>
 
-  <title>尾递归 | Bran's Pensieve</title>
+  <title>Leetcode M138 Copy List with Random Pointer | Bran's Pensieve</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/尾递归/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/11/Leetcode M138 Copy List with Random Pointer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">尾递归
+          <h1 class="post-title" itemprop="name headline">Leetcode M138 Copy List with Random Pointer
 
               
             
@@ -379,7 +379,7 @@
                 
               
 
-              <time title="创建时间：2020-03-30 00:07:41" itemprop="dateCreated datePublished" datetime="2020-03-30T00:07:41+08:00">2020-03-30</time>
+              <time title="创建时间：2020-04-11 23:15:38" itemprop="dateCreated datePublished" datetime="2020-04-11T23:15:38+08:00">2020-04-11</time>
             
 
             
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-02 14:24:20" itemprop="dateModified" datetime="2020-04-02T14:24:20+08:00">2020-04-02</time>
+                <time title="修改时间：2020-04-12 23:50:18" itemprop="dateModified" datetime="2020-04-12T23:50:18+08:00">2020-04-12</time>
               
             
           </span>
@@ -428,7 +428,7 @@
 
           
           
-            <span id="/2020/03/30/尾递归/" class="leancloud_visitors" data-flag-title="尾递归">
+            <span id="/2020/04/11/Leetcode M138 Copy List with Random Pointer/" class="leancloud_visitors" data-flag-title="Leetcode M138 Copy List with Random Pointer">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -459,11 +459,31 @@
       
 
       
-        <h1 id="尾递归（tail-recursion"><a href="#尾递归（tail-recursion" class="headerlink" title="尾递归（tail recursion)"></a>尾递归（tail recursion)</h1><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// not tail recursion</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> i*factorial(i<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// tail recursion</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factorialTR</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> result)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> factorialTR(i<span class="number">-1</span>, i*result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
- <a id="more"></a>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p><code>factorial()</code>在每一次递归时都会为<code>factorial()</code>生成新的栈帧，开辟栈空间来存储上一次递归的栈空间地址和变量<code>i</code>，当阶乘的数很大时就很容易造成栈溢出。而<code>factorialTR()</code>通过使用一个参数传递上一次方法执行的结果，支持尾递归优化的语言会在编译器的帮助下对这行代码进行优化，复用栈帧，不会造成栈的溢出。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>java</code>和<code>python</code>不支持尾递归优化</p>
-
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
+<p>Return a deep copy of the list.</p>
+<p>The Linked List is represented in the input/output as a list of n nodes. Each node is represented as a pair of [val, random_index] where:</p>
+<ul>
+<li>val: an integer representing Node.val</li>
+<li>random_index: the index of the node (range from 0 to n-1) where random pointer points to, or null if it does not point to any node.</li>
+</ul>
+<p>Example 1:</p>
+<pre><code>Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
+</code></pre><h1 id="Opps"><a href="#Opps" class="headerlink" title="Opps"></a>Opps</h1><p>Althogh my solution is  one kind of solutions essentially, it’s lack of beauty too much. So i would give the official and beautiful solution code and my understanding directly, then i would show how i thought about this problem and my dity code. Haha, maybe my stupid code would make you happy and have a nice day, realizing that there was a green hand spend a lot of time on it but not got the good answer.</p>
+<h1 id="The-Souliton-Which-Runtime-is-0ms"><a href="#The-Souliton-Which-Runtime-is-0ms" class="headerlink" title="The Souliton Which Runtime is 0ms"></a>The Souliton Which Runtime is 0ms</h1><h2 id="Key-Points"><a href="#Key-Points" class="headerlink" title="Key Points"></a>Key Points</h2><ul>
+<li>deep copy should copy and create new object of every attribute.</li>
+<li>create next node and random node use <code>Map&lt;Node,Node&gt; visitedMap</code>, which keys store the copied node and their corresponding value store the new corresponding node.</li>
+<li>begin with the first node, for each node, find next node and random node in <code>visitedMap</code> by recursion. If there is no new create node, create and put it in <code>visitedMap</code>, and continue loop until reach the last node in the list we want to copy.</li>
+<li>return the first node after finished recursion.<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="comment">class Node &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    Node next;</span></span><br><span class="line"><span class="comment">    Node random;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node(int val) &#123;</span></span><br><span class="line"><span class="comment">        this.val = val;</span></span><br><span class="line"><span class="comment">        this.next = null;</span></span><br><span class="line"><span class="comment">        this.random = null;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;        </span><br><span class="line">    Map&lt;Node, Node&gt; visitedMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">copyRandomList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(visitedMap.containsKey(head))&#123;</span><br><span class="line">            <span class="keyword">return</span> visitedMap.get(head);</span><br><span class="line">        &#125;</span><br><span class="line">        Node newNode = <span class="keyword">new</span> Node(head.val, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">        visitedMap.putIfAbsent(head, newNode);</span><br><span class="line">        </span><br><span class="line">        newNode.next = copyRandomList(head.next);</span><br><span class="line">        newNode.random = copyRandomList(head.random);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> newNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="My-Thinking-and-solution"><a href="#My-Thinking-and-solution" class="headerlink" title="My Thinking and solution"></a>My Thinking and solution</h1><h2 id="Basic-Idea"><a href="#Basic-Idea" class="headerlink" title="Basic Idea"></a>Basic Idea</h2><ul>
+<li>Use Map, which keys store the index of random node appear in the list and their corresponding value store the new copy node object.</li>
+<li>first loop to put index and new copy node into the map.</li>
+<li>traverse copied list second times to assign random node of every new node. For each random code, get it’s index by counting the distance between this random node and the last node, which next node is <code>null</code>. Find the new node in the map which key is the value of this index.<h2 id="Imporve"><a href="#Imporve" class="headerlink" title="Imporve"></a>Imporve</h2>Use list raher than map to store the new node object, because obviously the random index value could be get by the method <code>ArrayList.get(i)</code>.<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// solution 1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">copyRandomList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">        Node i = head;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        Integer index = <span class="number">0</span>; </span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Integer, Node&gt; indexMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            Node node = <span class="keyword">new</span> Node(i.val);</span><br><span class="line">            indexMap.put(index, node);</span><br><span class="line">            i = i.next;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;<span class="keyword">while</span>(i != <span class="keyword">null</span>);</span><br><span class="line">        end = index;</span><br><span class="line">        index = <span class="number">0</span>;</span><br><span class="line">        i = head;</span><br><span class="line">        <span class="keyword">while</span>(i != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i.random != <span class="keyword">null</span>)&#123;</span><br><span class="line">                Node now = i.random;</span><br><span class="line">                <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(now.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    now = now.next;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                indexMap.get(index).random = indexMap.get(end - j - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            indexMap.get(index).next = indexMap.get(index + <span class="number">1</span>);</span><br><span class="line">            i = i.next;</span><br><span class="line">            index ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> indexMap.get(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Solution 2:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">copyRandomList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        List&lt;Node&gt; indexList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Node i = head;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            Node node = <span class="keyword">new</span> Node(i.val);</span><br><span class="line">            indexList.add(node);</span><br><span class="line">            i = i.next;</span><br><span class="line">        &#125;<span class="keyword">while</span>(i != <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        i = head;</span><br><span class="line">        <span class="keyword">while</span>(i != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i.random != <span class="keyword">null</span>)&#123;</span><br><span class="line">                Node now = i.random;</span><br><span class="line">                <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(now.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    now = now.next;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                indexList.get(index).random = indexList.get(indexList.size() - j - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i.next != <span class="keyword">null</span>) indexList.get(index).next = indexList.get(index + <span class="number">1</span>);</span><br><span class="line">            i = i.next;</span><br><span class="line">            index ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> indexList.get(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -493,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/30/String.intern() Method in Java/" rel="next" title="String.intern() Method in Java">
-                <i class="fa fa-chevron-left"></i> String.intern() Method in Java
+              <a href="/2020/04/07/Shallow Copy and Deep Copy in Java/" rel="next" title="Shallow Copy and Deep Copy in Java">
+                <i class="fa fa-chevron-left"></i> Shallow Copy and Deep Copy in Java
               </a>
             
           </div>
@@ -502,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/" rel="prev" title="Linear Algebra Learing Notes 1：Linear transformation">
-                Linear Algebra Learing Notes 1：Linear transformation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -719,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#尾递归（tail-recursion"><span class="nav-number">1.</span> <span class="nav-text">尾递归（tail recursion)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.3.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Opps"><span class="nav-number">2.</span> <span class="nav-text">Opps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Souliton-Which-Runtime-is-0ms"><span class="nav-number">3.</span> <span class="nav-text">The Souliton Which Runtime is 0ms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Points"><span class="nav-number">3.1.</span> <span class="nav-text">Key Points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.2.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#My-Thinking-and-solution"><span class="nav-number">4.</span> <span class="nav-text">My Thinking and solution</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Idea"><span class="nav-number">4.1.</span> <span class="nav-text">Basic Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Imporve"><span class="nav-number">4.2.</span> <span class="nav-text">Imporve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-1"><span class="nav-number">4.3.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></div>
             
 
           </div>
