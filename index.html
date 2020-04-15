@@ -336,6 +336,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/Quicksort/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/14/Quicksort/" class="post-title-link" itemprop="url">Quicksort</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-14 23:21:13" itemprop="dateCreated datePublished" datetime="2020-04-14T23:21:13+08:00">2020-04-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-15 23:55:33" itemprop="dateModified" datetime="2020-04-15T23:55:33+08:00">2020-04-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">课程</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/" itemprop="url" rel="index"><span itemprop="name">Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/04/14/Quicksort/" class="leancloud_visitors" data-flag-title="Quicksort">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Traditional-One-Pivot-Quicksort"><a href="#Traditional-One-Pivot-Quicksort" class="headerlink" title="Traditional (One-Pivot) Quicksort"></a>Traditional (One-Pivot) Quicksort</h1><h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><p>quote from <em>Alogrithm</em></p>
+<blockquote>
+<p>采用分支法的思想</p>
+<p>最坏时间复杂度为$\left ( n^{2} \right )$</p>
+<p>平均时间复杂度为$\left ( n\cdot lgn \right )<br>$</p>
+<p>原址排序</p>
+</blockquote>
+<h2 id="Code-and-Annotation"><a href="#Code-and-Annotation" class="headerlink" title="Code and Annotation"></a>Code and Annotation</h2><p>implement code in <em>Alogrithm</em><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(begin &lt; end)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = partition(array, begin, end);</span><br><span class="line">        quickSort(array, begin, middle - <span class="number">1</span>);</span><br><span class="line">        quickSort(array, middle + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="comment">// chose an element to compare</span></span><br><span class="line">    <span class="keyword">int</span> compare = array[end];</span><br><span class="line">    <span class="keyword">int</span> lowIndex = begin - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// from begin to end, find element smaller than compare</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> highIndex = begin; highIndex &lt; end; highIndex++;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[highIndex] &lt;= compare)&#123;</span><br><span class="line">            lowIndex++;</span><br><span class="line">            <span class="comment">// Swap array[lowIndex] and array[highIndex]</span></span><br><span class="line">            <span class="keyword">int</span> temp = array[lowIndex];</span><br><span class="line">            array[lowIndex] = array[highIndex];</span><br><span class="line">            array[highIndex] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> temp = array[lowIndex + <span class="number">1</span>];</span><br><span class="line">    array[lowIndex] = array[end];</span><br><span class="line">    array[end] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Another-Implement"><a href="#Another-Implement" class="headerlink" title="Another Implement"></a>Another Implement</h2><ol>
+<li>dig the <code>compare</code> element as a hole to fill.</li>
+<li>use index <code>i</code> to find first element <code>greater</code> which is greater than pivot <code>compare</code> from begin to end, fill <code>greater</code> to the hole and dig a new hole in <code>i</code>.</li>
+<li>use index <code>j</code> to find first element <code>smaller</code> which is smaller than pivot <code>compare</code> from end to begin, fill <code>smaller</code> to the hole and dig a new hole in <code>j</code>.</li>
+<li>loop step 2 to 3 until <code>i</code> meet <code>j</code> which means <code>i == j</code>, then fill the hole with <code>compare</code></li>
+<li>have finished divide, then recurse to conquer.<h1 id="Dual-Pivot-Quicksort"><a href="#Dual-Pivot-Quicksort" class="headerlink" title="Dual-Pivot Quicksort"></a>Dual-Pivot Quicksort</h1><h1 id="Source-Code-of-Arrays-sort-int-a-Method-in-Java"><a href="#Source-Code-of-Arrays-sort-int-a-Method-in-Java" class="headerlink" title="Source Code of Arrays.sort(int[] a) Method in Java"></a>Source Code of Arrays.sort(int[] a) Method in Java</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/11/Leetcode M138 Copy List with Random Pointer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1895,197 +2094,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/Basic-Data-Types-and-Reference-Data-Types-in-Java/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bran">
-      <meta itemprop="description" content="一个麻瓜">
-      <meta itemprop="image" content="/images/icebear-grin.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bran's Pensieve">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/04/02/Basic-Data-Types-and-Reference-Data-Types-in-Java/" class="post-title-link" itemprop="url">Basic Data Types and Reference Data Types in Java</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-04-02 00:54:36 / 修改时间：14:22:38" itemprop="dateCreated datePublished" datetime="2020-04-02T00:54:36+08:00">2020-04-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">课程</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-            <span id="/2020/04/02/Basic-Data-Types-and-Reference-Data-Types-in-Java/" class="leancloud_visitors" data-flag-title="Basic Data Types and Reference Data Types in Java">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"><a href="#java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改" class="headerlink" title="java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改"></a>java中利用对象初始化引用数据类型实例，修改实例的同时完成对对象的修改</h1><p>由LeetCode第49题Group Anagrams讨论区中高票解法中的一种写法引发的思考，问题和代码如下：</p>
-<pre><code>Given an array of strings, group anagrams together.
-Example:
-Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],
-Output:
-[
-    [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],
-    [&quot;nat&quot;,&quot;tan&quot;],
-    [&quot;bat&quot;]
-]
-Note:
-All inputs will be in lowercase.
-The order of your output does not matter.
-</code></pre>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2020/04/02/Basic-Data-Types-and-Reference-Data-Types-in-Java/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2135,7 +2143,7 @@ The order of your output does not matter.
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -2498,6 +2506,8 @@ The order of your output does not matter.
   
     
       
+        
+      
     
       
     
@@ -2519,6 +2529,43 @@ The order of your output does not matter.
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 
