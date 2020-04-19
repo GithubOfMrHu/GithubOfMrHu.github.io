@@ -92,24 +92,24 @@
 
 
 
-  <meta name="description" content="leetcode M79 Binary Tree Inorder TraversalQUESTIONGiven a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjac">
+  <meta name="description" content="Traditional (One-Pivot) QuicksortCharacterquote from Alogrithm  采用分支法的思想 最坏时间复杂度为$\left ( n^{2} \right )$ 平均时间复杂度为$\left ( n\cdot lgn \right )$ 原址排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode M79 Binary Tree Inorder Traversal">
-<meta property="og:url" content="http://yoursite.com/2019/02/27/leetcode M79 Binary Tree Inorder Traversal/index.html">
+<meta property="og:title" content="Quick Sort">
+<meta property="og:url" content="http://yoursite.com/2020/04/14/Quick Sort/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="leetcode M79 Binary Tree Inorder TraversalQUESTIONGiven a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjac">
+<meta property="og:description" content="Traditional (One-Pivot) QuicksortCharacterquote from Alogrithm  采用分支法的思想 最坏时间复杂度为$\left ( n^{2} \right )$ 平均时间复杂度为$\left ( n\cdot lgn \right )$ 原址排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T06:24:20.373Z">
+<meta property="og:updated_time" content="2020-04-19T14:06:31.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode M79 Binary Tree Inorder Traversal">
-<meta name="twitter:description" content="leetcode M79 Binary Tree Inorder TraversalQUESTIONGiven a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjac">
+<meta name="twitter:title" content="Quick Sort">
+<meta name="twitter:description" content="Traditional (One-Pivot) QuicksortCharacterquote from Alogrithm  采用分支法的思想 最坏时间复杂度为$\left ( n^{2} \right )$ 平均时间复杂度为$\left ( n\cdot lgn \right )$ 原址排序">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/27/leetcode M79 Binary Tree Inorder Traversal/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/14/Quick Sort/">
 
 
 
@@ -119,7 +119,7 @@
   };
 </script>
 
-  <title>leetcode M79 Binary Tree Inorder Traversal | Bran's Pensieve</title>
+  <title>Quick Sort | Bran's Pensieve</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/leetcode M79 Binary Tree Inorder Traversal/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/Quick Sort/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">leetcode M79 Binary Tree Inorder Traversal
+          <h1 class="post-title" itemprop="name headline">Quick Sort
 
               
             
@@ -379,7 +379,7 @@
                 
               
 
-              <time title="创建时间：2019-02-27 15:15:09" itemprop="dateCreated datePublished" datetime="2019-02-27T15:15:09+08:00">2019-02-27</time>
+              <time title="创建时间：2020-04-14 23:21:13" itemprop="dateCreated datePublished" datetime="2020-04-14T23:21:13+08:00">2020-04-14</time>
             
 
             
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-02 14:24:20" itemprop="dateModified" datetime="2020-04-02T14:24:20+08:00">2020-04-02</time>
+                <time title="修改时间：2020-04-19 22:06:31" itemprop="dateModified" datetime="2020-04-19T22:06:31+08:00">2020-04-19</time>
               
             
           </span>
@@ -428,7 +428,7 @@
 
           
           
-            <span id="/2019/02/27/leetcode M79 Binary Tree Inorder Traversal/" class="leancloud_visitors" data-flag-title="leetcode M79 Binary Tree Inorder Traversal">
+            <span id="/2020/04/14/Quick Sort/" class="leancloud_visitors" data-flag-title="Quick Sort">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -459,35 +459,23 @@
       
 
       
-        <h1 id="leetcode-M79-Binary-Tree-Inorder-Traversal"><a href="#leetcode-M79-Binary-Tree-Inorder-Traversal" class="headerlink" title="leetcode M79 Binary Tree Inorder Traversal"></a>leetcode M79 Binary Tree Inorder Traversal</h1><h2 id="QUESTION"><a href="#QUESTION" class="headerlink" title="QUESTION"></a>QUESTION</h2><p>Given a 2D board and a word, find if the word exists in the grid.</p>
-<p>The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.<br><a id="more"></a><br>Example:</p>
-<p>board =</p>
-<pre><code>[
-    [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;],
-    [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;],
-    [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]
-]
-</code></pre><p>Given word = “ABCCED”, return true.</p>
-<p>Given word = “SEE”, return true.</p>
-<p>Given word = “ABCB”, return false.</p>
-<h2 id="THINKING"><a href="#THINKING" class="headerlink" title="THINKING"></a>THINKING</h2><p>可以看出这是一道深度优先搜索问题，可以通过遍历找出与word第一个字母相同的元素，从此元素出发，向上下左右搜索可能的路径，若找到，返回true，找不到，继续向后遍历，直至最后一个元素，返回false。</p>
-<h2 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h2><p>讨论区VOTE最高的答案</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">exist</span><span class="params">(<span class="keyword">char</span>[][] board, String word)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] w = word.toCharArray();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> y=<span class="number">0</span>; y&lt;board.length; y++) &#123;</span><br><span class="line">    	<span class="keyword">for</span> (<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;board[y].length; x++) &#123;</span><br><span class="line">    		<span class="keyword">if</span> (exist(board, y, x, w, <span class="number">0</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">exist</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">int</span> y, <span class="keyword">int</span> x, <span class="keyword">char</span>[] word, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i == word.length) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (y&lt;<span class="number">0</span> || x&lt;<span class="number">0</span> || y == board.length || x == board[y].length) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (board[y][x] != word[i]) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        board[y][x] ^= <span class="number">256</span>;</span><br><span class="line">        <span class="comment">//字母的ASCII码值小于128，通过异或256（即异或100000000，低位不变，高位改变）使已经在路径上的元素不会在之后的深度优先搜索过程中再次被匹配上。</span></span><br><span class="line">        <span class="keyword">boolean</span> exist = exist(board, y, x+<span class="number">1</span>, word, i+<span class="number">1</span>)</span><br><span class="line">            || exist(board, y, x-<span class="number">1</span>, word, i+<span class="number">1</span>)</span><br><span class="line">            || exist(board, y+<span class="number">1</span>, x, word, i+<span class="number">1</span>)</span><br><span class="line">            || exist(board, y-<span class="number">1</span>, x, word, i+<span class="number">1</span>);</span><br><span class="line">        board[y][x] ^= <span class="number">256</span>;</span><br><span class="line">        <span class="keyword">return</span> exist;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="headerlink" title="二叉树的中序遍历"></a>二叉树的中序遍历</h1><p>inorder traversal，先遍历左子树，然后访问根结点，最后遍历右子树。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>递归</li>
-<li>栈</li>
-<li>中序线索二叉树</li>
-</ul>
-<h3 id="利用中序线索二叉树进行遍历的策略"><a href="#利用中序线索二叉树进行遍历的策略" class="headerlink" title="利用中序线索二叉树进行遍历的策略"></a>利用中序线索二叉树进行遍历的策略</h3><pre><code>Step 1: Initialize current as root
-Step 2: While current is not NULL,
-    If current does not have left child
-        a. Add current’s value
-        b. Go to the right, i.e., current = current.right
-    Else
-        a. In current&apos;s left subtree, make current the right child of the rightmost node
-        b. Go to this left child, i.e., current = current.left
-</code></pre>
+        <h1 id="Traditional-One-Pivot-Quicksort"><a href="#Traditional-One-Pivot-Quicksort" class="headerlink" title="Traditional (One-Pivot) Quicksort"></a>Traditional (One-Pivot) Quicksort</h1><h2 id="Character"><a href="#Character" class="headerlink" title="Character"></a>Character</h2><p>quote from <em>Alogrithm</em></p>
+<blockquote>
+<p>采用分支法的思想</p>
+<p>最坏时间复杂度为$\left ( n^{2} \right )$</p>
+<p>平均时间复杂度为$\left ( n\cdot lgn \right )<br>$</p>
+<p>原址排序<br><a id="more"></a></p>
+</blockquote>
+<h2 id="Code-and-Annotation"><a href="#Code-and-Annotation" class="headerlink" title="Code and Annotation"></a>Code and Annotation</h2><p>implement code in <em>Alogrithm</em><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(begin &lt; end)&#123;</span><br><span class="line">        <span class="keyword">int</span> middle = partition(array, begin, end);</span><br><span class="line">        quickSort(array, begin, middle - <span class="number">1</span>);</span><br><span class="line">        quickSort(array, middle + <span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="comment">// chose an element to compare</span></span><br><span class="line">    <span class="keyword">int</span> compare = array[end];</span><br><span class="line">    <span class="keyword">int</span> lowIndex = begin - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// from begin to end, find element smaller than compare</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> highIndex = begin; highIndex &lt; end; highIndex++;)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[highIndex] &lt;= compare)&#123;</span><br><span class="line">            lowIndex++;</span><br><span class="line">            <span class="comment">// Swap array[lowIndex] and array[highIndex]</span></span><br><span class="line">            <span class="keyword">int</span> temp = array[lowIndex];</span><br><span class="line">            array[lowIndex] = array[highIndex];</span><br><span class="line">            array[highIndex] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> temp = array[lowIndex + <span class="number">1</span>];</span><br><span class="line">    array[lowIndex] = array[end];</span><br><span class="line">    array[end] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Another-Implement"><a href="#Another-Implement" class="headerlink" title="Another Implement"></a>Another Implement</h2><ol>
+<li>dig the <code>compare</code> element as a hole to fill.</li>
+<li>use index <code>i</code> to find first element <code>greater</code> which is greater than pivot <code>compare</code> from begin to end, fill <code>greater</code> to the hole and dig a new hole in <code>i</code>.</li>
+<li>use index <code>j</code> to find first element <code>smaller</code> which is smaller than pivot <code>compare</code> from end to begin, fill <code>smaller</code> to the hole and dig a new hole in <code>j</code>.</li>
+<li>loop step 2 to 3 until <code>i</code> meet <code>j</code> which means <code>i &gt;= j</code>, then fill the hole with <code>compare</code></li>
+<li>have finished divide, then recurse to conquer.<h1 id="Dual-Pivot-Quicksort"><a href="#Dual-Pivot-Quicksort" class="headerlink" title="Dual-Pivot Quicksort"></a>Dual-Pivot Quicksort</h1><h1 id="Source-Core-Code-of-Arrays-sort-int-a-Method-in-Java"><a href="#Source-Core-Code-of-Arrays-sort-int-a-Method-in-Java" class="headerlink" title="Source Core Code of Arrays.sort(int[] a) Method in Java"></a>Source Core Code of Arrays.sort(int[] a) Method in Java</h1>Just show core code of Dual-Pivot Quicksort used in Java. Actually, only when <code>47 &lt; a.length &lt;= 256 &amp;&amp; Check if the array is nearly sorted run times &gt; 67</code>, which means <code>a</code> is not is not highly structured and <code>a.length</code> is not too short, will use Dual-Pivot Quicksort like below.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pivot1 = a[e2];</span><br><span class="line"><span class="keyword">int</span> pivot2 = a[e4];</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    * The first and the last elements to be sorted are moved to the</span></span><br><span class="line"><span class="comment">    * locations formerly occupied by the pivots. When partitioning</span></span><br><span class="line"><span class="comment">    * is complete, the pivots are swapped back into their final</span></span><br><span class="line"><span class="comment">    * positions, and excluded from subsequent sorting.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">a[e2] = a[left];</span><br><span class="line">a[e4] = a[right];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    * Skip elements, which are less or greater than pivot values.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="keyword">while</span> (a[++less] &lt; pivot1);</span><br><span class="line"><span class="keyword">while</span> (a[--great] &gt; pivot2);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    * Partitioning:</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    *   left part           center part                   right part</span></span><br><span class="line"><span class="comment">    * +--------------------------------------------------------------+</span></span><br><span class="line"><span class="comment">    * |  &lt; pivot1  |  pivot1 &lt;= &amp;&amp; &lt;= pivot2  |    ?    |  &gt; pivot2  |</span></span><br><span class="line"><span class="comment">    * +--------------------------------------------------------------+</span></span><br><span class="line"><span class="comment">    *               ^                          ^       ^</span></span><br><span class="line"><span class="comment">    *               |                          |       |</span></span><br><span class="line"><span class="comment">    *              less                        k     great</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * Invariants:</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    *              all in (left, less)   &lt; pivot1</span></span><br><span class="line"><span class="comment">    *    pivot1 &lt;= all in [less, k)    &lt;= pivot2</span></span><br><span class="line"><span class="comment">    *              all in (great, right) &gt; pivot2</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * Pointer k is the first index of ?-part.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">outer:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = less - <span class="number">1</span>; ++k &lt;= great; ) &#123;</span><br><span class="line">    <span class="keyword">int</span> ak = a[k];</span><br><span class="line">    <span class="keyword">if</span> (ak &lt; pivot1) &#123; <span class="comment">// Move a[k] to left part</span></span><br><span class="line">        a[k] = a[less];</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            * Here and below we use "a[i] = b; i++;" instead</span></span><br><span class="line"><span class="comment">            * of "a[i++] = b;" due to performance issue.</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">        a[less] = ak;</span><br><span class="line">        ++less;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ak &gt; pivot2) &#123; <span class="comment">// Move a[k] to right part</span></span><br><span class="line">        <span class="keyword">while</span> (a[great] &gt; pivot2) &#123;</span><br><span class="line">            <span class="keyword">if</span> (great-- == k) &#123;</span><br><span class="line">                <span class="keyword">break</span> outer;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a[great] &lt; pivot1) &#123; <span class="comment">// a[great] &lt;= pivot2</span></span><br><span class="line">            a[k] = a[less];</span><br><span class="line">            a[less] = a[great];</span><br><span class="line">            ++less;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// pivot1 &lt;= a[great] &lt;= pivot2</span></span><br><span class="line">            a[k] = a[great];</span><br><span class="line">        &#125;</span><br><span class="line">        a[great] = ak;</span><br><span class="line">        --great;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Swap pivots into their final positions</span></span><br><span class="line">a[left]  = a[less  - <span class="number">1</span>]; a[less  - <span class="number">1</span>] = pivot1;</span><br><span class="line">a[right] = a[great + <span class="number">1</span>]; a[great + <span class="number">1</span>] = pivot2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sort left and right parts recursively, excluding known pivots</span></span><br><span class="line">sort(a, left, less - <span class="number">2</span>, leftmost);</span><br><span class="line">sort(a, great + <span class="number">2</span>, right, <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
     </div>
 
@@ -517,8 +505,8 @@ Step 2: While current is not NULL,
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/12/Spring2/" rel="next" title="Spring学习笔记（二）：自动装配">
-                <i class="fa fa-chevron-left"></i> Spring学习笔记（二）：自动装配
+              <a href="/2020/04/11/Leetcode M138 Copy List with Random Pointer/" rel="next" title="Leetcode M138 Copy List with Random Pointer">
+                <i class="fa fa-chevron-left"></i> Leetcode M138 Copy List with Random Pointer
               </a>
             
           </div>
@@ -527,8 +515,8 @@ Step 2: While current is not NULL,
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/04/Spring3/" rel="prev" title="Spring学习笔记（三）：显式装配">
-                Spring学习笔记（三）：显式装配 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/18/LeetCode-M146-LRU-Cache/" rel="prev" title="LeetCode M146 LRU Cache">
+                LeetCode M146 LRU Cache <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -743,7 +731,7 @@ Step 2: While current is not NULL,
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode-M79-Binary-Tree-Inorder-Traversal"><span class="nav-number">1.</span> <span class="nav-text">leetcode M79 Binary Tree Inorder Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QUESTION"><span class="nav-number">1.1.</span> <span class="nav-text">QUESTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#THINKING"><span class="nav-number">1.2.</span> <span class="nav-text">THINKING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLUTION"><span class="nav-number">1.3.</span> <span class="nav-text">SOLUTION</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树的中序遍历"><span class="nav-number">2.</span> <span class="nav-text">二叉树的中序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用中序线索二叉树进行遍历的策略"><span class="nav-number">2.1.1.</span> <span class="nav-text">利用中序线索二叉树进行遍历的策略</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Traditional-One-Pivot-Quicksort"><span class="nav-number">1.</span> <span class="nav-text">Traditional (One-Pivot) Quicksort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Character"><span class="nav-number">1.1.</span> <span class="nav-text">Character</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-and-Annotation"><span class="nav-number">1.2.</span> <span class="nav-text">Code and Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Another-Implement"><span class="nav-number">1.3.</span> <span class="nav-text">Another Implement</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dual-Pivot-Quicksort"><span class="nav-number">2.</span> <span class="nav-text">Dual-Pivot Quicksort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Core-Code-of-Arrays-sort-int-a-Method-in-Java"><span class="nav-number">3.</span> <span class="nav-text">Source Core Code of Arrays.sort(int[] a) Method in Java</span></a></li></ol></div>
             
 
           </div>
@@ -978,6 +966,43 @@ Step 2: While current is not NULL,
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 
