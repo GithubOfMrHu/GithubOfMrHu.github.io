@@ -92,25 +92,24 @@
 
 
 
-  <meta name="description" content="CSS选择某一div下的一种元素CSS:1234567&amp;lt;head&amp;gt;    &amp;lt;style type=&quot;text/css&quot;&amp;gt;        .a p&amp;#123;        text-indent: 2em;        &amp;#125;    &amp;lt;/style&amp;gt;&amp;lt;/head&amp;gt; html:1234&amp;lt;div class=&quot;a&quot;&amp;gt;    &amp;lt;p">
-<meta name="keywords" content="CSS">
+  <meta name="description" content="一个麻瓜">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS Learning Notes">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/CSS-Learning-Notes/index.html">
+<meta property="og:title" content="Leectcode M1143 Longest Common Subsequence">
+<meta property="og:url" content="http://yoursite.com/2020/04/26/Leectcode-M1143-Longest-Common-Subsequence/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="CSS选择某一div下的一种元素CSS:1234567&amp;lt;head&amp;gt;    &amp;lt;style type=&quot;text/css&quot;&amp;gt;        .a p&amp;#123;        text-indent: 2em;        &amp;#125;    &amp;lt;/style&amp;gt;&amp;lt;/head&amp;gt; html:1234&amp;lt;div class=&quot;a&quot;&amp;gt;    &amp;lt;p">
+<meta property="og:description" content="一个麻瓜">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-01T17:22:21.483Z">
+<meta property="og:updated_time" content="2020-04-26T15:27:11.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS Learning Notes">
-<meta name="twitter:description" content="CSS选择某一div下的一种元素CSS:1234567&amp;lt;head&amp;gt;    &amp;lt;style type=&quot;text/css&quot;&amp;gt;        .a p&amp;#123;        text-indent: 2em;        &amp;#125;    &amp;lt;/style&amp;gt;&amp;lt;/head&amp;gt; html:1234&amp;lt;div class=&quot;a&quot;&amp;gt;    &amp;lt;p">
+<meta name="twitter:title" content="Leectcode M1143 Longest Common Subsequence">
+<meta name="twitter:description" content="一个麻瓜">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/02/CSS-Learning-Notes/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/26/Leectcode-M1143-Longest-Common-Subsequence/">
 
 
 
@@ -120,7 +119,7 @@
   };
 </script>
 
-  <title>CSS Learning Notes | Bran's Pensieve</title>
+  <title>Leectcode M1143 Longest Common Subsequence | Bran's Pensieve</title>
   
 
 
@@ -337,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/CSS-Learning-Notes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/26/Leectcode-M1143-Longest-Common-Subsequence/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bran">
@@ -354,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS Learning Notes
+          <h1 class="post-title" itemprop="name headline">Leectcode M1143 Longest Common Subsequence
 
               
             
@@ -380,7 +379,7 @@
                 
               
 
-              <time title="创建时间：2020-04-02 01:22:12 / 修改时间：01:22:21" itemprop="dateCreated datePublished" datetime="2020-04-02T01:22:12+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-26 23:27:10 / 修改时间：23:27:11" itemprop="dateCreated datePublished" datetime="2020-04-26T23:27:10+08:00">2020-04-26</time>
             
 
             
@@ -399,7 +398,7 @@
 
           
           
-            <span id="/2020/04/02/CSS-Learning-Notes/" class="leancloud_visitors" data-flag-title="CSS Learning Notes">
+            <span id="/2020/04/26/Leectcode-M1143-Longest-Common-Subsequence/" class="leancloud_visitors" data-flag-title="Leectcode M1143 Longest Common Subsequence">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -430,9 +429,7 @@
       
 
       
-        <h1 id="CSS选择某一div下的一种元素"><a href="#CSS选择某一div下的一种元素" class="headerlink" title="CSS选择某一div下的一种元素"></a>CSS选择某一div下的一种元素</h1><p>CSS:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.a</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="undefined">        text-indent: 2em;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"a"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Ti amo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>banana<span class="tag">&lt;/<span class="name">p</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
+        
       
     </div>
 
@@ -453,12 +450,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
-          
-        </div>
-      
 
       
       
@@ -468,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/02/Leetcode-M3-Longest-Substring-Without-Repeating-Characters/" rel="next" title="Leetcode M3 Longest Substring Without Repeating Characters">
-                <i class="fa fa-chevron-left"></i> Leetcode M3 Longest Substring Without Repeating Characters
+              <a href="/2020/04/25/Leetcode-Problems-Bit-Manipulation/" rel="next" title="Leetcode Problems: Bit Manipulation">
+                <i class="fa fa-chevron-left"></i> Leetcode Problems: Bit Manipulation
               </a>
             
           </div>
@@ -477,10 +468,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/02/Some-Concepts/" rel="prev" title="Some Concepts">
-                Some Concepts <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,17 +512,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -687,23 +665,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS选择某一div下的一种元素"><span class="nav-number">1.</span> <span class="nav-text">CSS选择某一div下的一种元素</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
