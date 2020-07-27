@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="Java中使用匿名内部类对Map数据类型进行初始化1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
+  <meta name="description" content="Java中使用匿名内部类对Map数据类型进行初始化 1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
 <meta name="keywords" content="Map">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Map In Java">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/Map-In-Java/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="Java中使用匿名内部类对Map数据类型进行初始化1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
+<meta property="og:description" content="Java中使用匿名内部类对Map数据类型进行初始化 1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T06:24:20.641Z">
+<meta property="og:updated_time" content="2020-07-25T08:11:08.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Map In Java">
-<meta name="twitter:description" content="Java中使用匿名内部类对Map数据类型进行初始化1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
+<meta name="twitter:description" content="Java中使用匿名内部类对Map数据类型进行初始化 1Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; map = new HashMap&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt;();">
 
 
 
@@ -380,12 +380,24 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:42:28 / 修改时间：14:24:20" itemprop="dateCreated datePublished" datetime="2020-04-02T00:42:28+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:42:28" itemprop="dateCreated datePublished" datetime="2020-04-02T00:42:28+08:00">2020-04-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-07-25 16:11:08" itemprop="dateModified" datetime="2020-07-25T16:11:08+08:00">2020-07-25</time>
               
             
           </span>
@@ -448,10 +460,13 @@
       
 
       
-        <h1 id="Java中使用匿名内部类对Map数据类型进行初始化"><a href="#Java中使用匿名内部类对Map数据类型进行初始化" class="headerlink" title="Java中使用匿名内部类对Map数据类型进行初始化"></a>Java中使用匿名内部类对Map数据类型进行初始化</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br></pre></td></tr></table></figure>
+        <h1>Java中使用匿名内部类对Map数据类型进行初始化</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String, List&lt;String&gt;&gt;();</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="利用Map数据构造List数据"><a href="#利用Map数据构造List数据" class="headerlink" title="利用Map数据构造List数据"></a>利用Map数据构造List数据</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;(map.values());</span><br></pre></td></tr></table></figure>
-<h2 id="Map-values-方法"><a href="#Map-values-方法" class="headerlink" title="Map.values()方法"></a>Map.values()方法</h2><p>Returns:a collection view of the values contained in this map.</p>
+<h1>利用Map数据构造List数据</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;(map.values());</span><br></pre></td></tr></table></figure>
+<h2 id="Map-values-方法">Map.values()方法</h2>
+<p>Returns:a collection view of the values contained in this map.</p>
 <p>The collection is backed by the map, so changes to the map are reflected in the collection, and vice-versa. If the map is modified while an iteration over the collection is in progress (except through the iterator’s own remove operation), the results of the iteration are undefined. The collection supports element removal, which removes the corresponding mapping from the map, via the Iterator.remove, Collection.remove, removeAll, retainAll and clear operations. It does not support the add or addAll operations.</p>
 
       
@@ -573,7 +588,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -719,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中使用匿名内部类对Map数据类型进行初始化"><span class="nav-number">1.</span> <span class="nav-text">Java中使用匿名内部类对Map数据类型进行初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用Map数据构造List数据"><span class="nav-number">2.</span> <span class="nav-text">利用Map数据构造List数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-values-方法"><span class="nav-number">2.1.</span> <span class="nav-text">Map.values()方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Java中使用匿名内部类对Map数据类型进行初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">利用Map数据构造List数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-values-方法"><span class="nav-number">2.1.</span> <span class="nav-text">Map.values()方法</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="Bit Manipulation In JAVA   Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right S">
+  <meta name="description" content="Bit Manipulation In JAVA    Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right">
 <meta name="keywords" content="Bit Manipulation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode Problems: Bit Manipulation">
 <meta property="og:url" content="http://yoursite.com/2020/04/25/Leetcode-Problems-Bit-Manipulation/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="Bit Manipulation In JAVA   Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right S">
+<meta property="og:description" content="Bit Manipulation In JAVA    Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-27T14:41:54.916Z">
+<meta property="og:updated_time" content="2020-07-25T08:12:08.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode Problems: Bit Manipulation">
-<meta name="twitter:description" content="Bit Manipulation In JAVA   Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right S">
+<meta name="twitter:description" content="Bit Manipulation In JAVA    Operator Description     &amp;amp; Bitwise AND   \ Bitwise OR   ~ Bitwise Complement   &amp;lt;&amp;lt; Left Shift   &amp;gt;&amp;gt; Right Shift   ^ Bitwise XOR   &amp;gt;&amp;gt;&amp;gt; Unsigned Right">
 
 
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-27 22:41:54" itemprop="dateModified" datetime="2020-04-27T22:41:54+08:00">2020-04-27</time>
+                <time title="修改时间：2020-07-25 16:12:08" itemprop="dateModified" datetime="2020-07-25T16:12:08+08:00">2020-07-25</time>
               
             
           </span>
@@ -460,7 +460,8 @@
       
 
       
-        <h1 id="Bit-Manipulation-In-JAVA"><a href="#Bit-Manipulation-In-JAVA" class="headerlink" title="Bit Manipulation In JAVA"></a>Bit Manipulation In JAVA</h1><table>
+        <h1>Bit Manipulation In JAVA</h1>
+<table>
 <thead>
 <tr>
 <th>Operator</th>
@@ -499,7 +500,9 @@
 </tbody>
 </table>
 <a id="more"></a>
-<h1 id="M201-Bitwise-AND-of-Numbers-Range"><a href="#M201-Bitwise-AND-of-Numbers-Range" class="headerlink" title="M201 Bitwise AND of Numbers Range"></a>M201 Bitwise AND of Numbers Range</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a range [m, n] where 0 &lt;= m &lt;= n &lt;= 2147483647, return the bitwise AND of all numbers in this range, inclusive.</p>
+<h1>M201 Bitwise AND of Numbers Range</h1>
+<h2 id="Description">Description</h2>
+<p>Given a range [m, n] where 0 &lt;= m &lt;= n &lt;= 2147483647, return the bitwise AND of all numbers in this range, inclusive.</p>
 <pre><code>Example 1:
 Input: [5,7]
 Output: 4
@@ -507,15 +510,20 @@ Output: 4
 Example 2:
 Input: [0,1]
 Output: 0
-</code></pre><h2 id="Thinking"><a href="#Thinking" class="headerlink" title="Thinking"></a>Thinking</h2><p>The idea is very simple:</p>
+</code></pre>
+<h2 id="Thinking">Thinking</h2>
+<p>The idea is very simple:</p>
 <ol>
 <li>last bit of (odd number &amp; even number) is 0.</li>
 <li>when m != n, There is at least an odd number and an even number, so the last bit position result is 0.</li>
 <li>Move m and n rigth a position.</li>
 </ol>
 <p>Keep doing step 1,2,3 until m equal to n, use a factor to record the iteration time.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rangeBitwiseAnd</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> moveFactor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(m != n)&#123;</span><br><span class="line">            <span class="comment">// `&gt;&gt;` right the bit pattern to the right by a certain number of times specified in the operand.</span></span><br><span class="line">            <span class="comment">// Adds zero bits to the high order position</span></span><br><span class="line">            m &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">            n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">            moveFactor &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m * moveFactor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="E136-Single-Number"><a href="#E136-Single-Number" class="headerlink" title="E136 Single Number"></a>E136 Single Number</h1><h2 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h2><p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.</p>
+<h2 id="Solution">Solution</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rangeBitwiseAnd</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> moveFactor = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(m != n)&#123;</span><br><span class="line">            <span class="comment">// `&gt;&gt;` right the bit pattern to the right by a certain number of times specified in the operand.</span></span><br><span class="line">            <span class="comment">// Adds zero bits to the high order position</span></span><br><span class="line">            m &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">            n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">            moveFactor &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m * moveFactor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>E136 Single Number</h1>
+<h2 id="Description-2">Description</h2>
+<p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.</p>
 <p>Note:</p>
 <p>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
 <pre><code>Example 1:
@@ -525,7 +533,9 @@ Output: 1
 Example 2:
 Input: [4,1,2,1,2]
 Output: 4
-</code></pre><h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            res ^= nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Solution-2">Solution</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            res ^= nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -646,7 +656,7 @@ Output: 4
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -792,7 +802,7 @@ Output: 4
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bit-Manipulation-In-JAVA"><span class="nav-number">1.</span> <span class="nav-text">Bit Manipulation In JAVA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#M201-Bitwise-AND-of-Numbers-Range"><span class="nav-number">2.</span> <span class="nav-text">M201 Bitwise AND of Numbers Range</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thinking"><span class="nav-number">2.2.</span> <span class="nav-text">Thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.3.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E136-Single-Number"><span class="nav-number">3.</span> <span class="nav-text">E136 Single Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description-1"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-1"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Bit Manipulation In JAVA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">M201 Bitwise AND of Numbers Range</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thinking"><span class="nav-number">2.2.</span> <span class="nav-text">Thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.3.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">E136 Single Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>

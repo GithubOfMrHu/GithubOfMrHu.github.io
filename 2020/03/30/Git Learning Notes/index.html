@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="github网站上新建分支名称gtihub git如何查看分支 查看本地分支 git branch 查看远程分支 git branch -a">
+  <meta name="description" content="Some Concepets   Workspace： 工作区，就是平时存放项目代码的地方。   Index / Stage： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息。   Repository： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本。   Remote： 远程仓库，托管代码的服务器。">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Learning Notes">
 <meta property="og:url" content="http://yoursite.com/2020/03/30/Git Learning Notes/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="github网站上新建分支名称gtihub git如何查看分支 查看本地分支 git branch 查看远程分支 git branch -a">
+<meta property="og:description" content="Some Concepets   Workspace： 工作区，就是平时存放项目代码的地方。   Index / Stage： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息。   Repository： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本。   Remote： 远程仓库，托管代码的服务器。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T06:14:07.056Z">
+<meta property="og:updated_time" content="2020-07-27T15:56:44.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Learning Notes">
-<meta name="twitter:description" content="github网站上新建分支名称gtihub git如何查看分支 查看本地分支 git branch 查看远程分支 git branch -a">
+<meta name="twitter:description" content="Some Concepets   Workspace： 工作区，就是平时存放项目代码的地方。   Index / Stage： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息。   Repository： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本。   Remote： 远程仓库，托管代码的服务器。">
 
 
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-02 14:14:07" itemprop="dateModified" datetime="2020-04-02T14:14:07+08:00">2020-04-02</time>
+                <time title="修改时间：2020-07-27 23:56:44" itemprop="dateModified" datetime="2020-07-27T23:56:44+08:00">2020-07-27</time>
               
             
           </span>
@@ -442,13 +442,86 @@
       
 
       
-        <h1 id="github网站上新建分支名称"><a href="#github网站上新建分支名称" class="headerlink" title="github网站上新建分支名称"></a>github网站上新建分支名称</h1><p><a href="https://help.github.com/en/articles/creating-and-deleting-branches-within-your-repository" target="_blank" rel="noopener">gtihub</a></p>
-<h1 id="git如何查看分支"><a href="#git如何查看分支" class="headerlink" title="git如何查看分支"></a>git如何查看分支</h1><ul>
-<li>查看本地分支 <code>git branch</code></li>
-<li>查看远程分支 <code>git branch -a</code><a id="more"></a>
+        <h1>Some Concepets</h1>
+<ol>
+<li>
+<p>Workspace： 工作区，就是平时存放项目代码的地方。</p>
 </li>
+<li>
+<p>Index / Stage： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息。</p>
+</li>
+<li>
+<p>Repository： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本。</p>
+</li>
+<li>
+<p>Remote： 远程仓库，托管代码的服务器。</p>
+</li>
+</ol>
+ <a id="more"></a>
+<h1>github网站上新建分支名称</h1>
+<p><a href="https://help.github.com/en/articles/creating-and-deleting-branches-within-your-repository" target="_blank" rel="noopener">gtihub</a></p>
+<h1>git如何查看分支</h1>
+<ul>
+<li>查看本地分支 <code>git branch</code></li>
+<li>查看远程分支 <code>git branch -a</code></li>
 </ul>
-
+<h1>Push Changes To A Branch Of Server</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- git add -A</span><br><span class="line">- git commit -m &apos;commit comment&apos;</span><br><span class="line">- git push origin master</span><br></pre></td></tr></table></figure>
+<h1>Undo</h1>
+<h2 id="Undo-git-add">Undo <code>git add</code></h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Undo-git-commit">Undo <code>git commit</code></h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> unstage a file</span><br><span class="line">git reset HEAD &lt;file&gt;</span><br><span class="line"><span class="meta">#</span> unstage all the file added last time</span><br><span class="line">git rest HEAD</span><br></pre></td></tr></table></figure>
+<p>This command will <code>Unstaged changes after reset</code> which means changes in Stage have been withdrawed. If you want to continue withdraw changes from Workspace, use <code>git checkout -- &lt;file&gt;</code>.</p>
+<h1>Git Submodule</h1>
+<p>I met some problems during migrating my hexo blog environment to new PC. One of them is i couldn’t commit correctly. When i execute <code>git commit -m 'commit comment'</code> command, the result warns me that i have a submodule(子模块) in my files. Although the problem have solved after i modified my git globle config with this command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf input</span><br></pre></td></tr></table></figure>
+<p>Actually, i checked my remote repository. The <code>next</code> submodule is just a empty catalog with no files in it. Obviously, the easier way is that delete the <code>.git</code> and related files in submodule catalog, remove files in git stage, then push them because i hava changed so much confignation.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm - rf ./themes/next/.git/</span><br><span class="line"># mv ./themes/next/.git ./themes/next/.git_backup</span><br><span class="line">git rm -f --cached &lt;.\themes\next\&gt;</span><br><span class="line">git add -A</span><br><span class="line">git push orgin</span><br></pre></td></tr></table></figure>
+<p>But i think a better way is to use <code>git submodule</code> command to manage submodule used in project.That i can create a new repository as my hexo blog themes and share it.</p>
+<h2 id="Add-A-Submodule-To-Your-Project-And-Push">Add A Submodule To Your Project And Push</h2>
+<h3 id="git-submodule-add-submodule-url-path">git submodule add <submodule url=""> <path></path></submodule></h3>
+<p>I execute the following command in my hexo blog catalog <code>E:\blog</code> to add next theme as a submodule. <code>E:\blog</code> is mapping my blog github remote repository.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;submodule url&gt; &lt;path&gt;</span><br><span class="line">E:\FirstBlog&gt; git submodule add https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>After This, a file <code>.gitmodules</code> will be  added in my blog catalog. Like <code>.gitignore</code>, it controls the files in it which would be managed as a part of <code>blog</code> rather than the individual next repository.</p>
+<h2 id="Then-Clone-A-Repository-Including-A-Submodule">Then Clone A Repository Including A Submodule</h2>
+<h3 id="git-submodule-init">git submodule init</h3>
+<p><code>cd</code> to submodule catalog, and use git submodule init to clone the project or libarary as a submodule. This command will register the submodule for the path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\SecondBlog&gt; git submodule init</span><br></pre></td></tr></table></figure>
+<h3 id="git-submodule-update">git submodule update</h3>
+<p>Git will clone the submodule files linked with a speciific commit id instead of the latest commit.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\SecondBlog&gt; git submodule update</span><br></pre></td></tr></table></figure>
+<h3 id="a-command-coule-realize-submodule-init-and-update">a command coule realize submodule init and update</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> -b choose branch to clone</span><br><span class="line"><span class="meta">#</span> --recursive clone repository recursively</span><br><span class="line">E:\SecondBlog&gt; git clone -b dev --recursive &lt;remote repository url&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Push-Changes-In-Submodule">Push Changes In Submodule</h2>
+<h3 id="Ensure-that-you-have-the-permission-to-commit-in-submodule">Ensure that you have the permission to commit in submodule</h3>
+<p>For me, i should change the <code>url</code> in <code>.gitmodules</code> to my respository url to ensure that i have right to commit my change.</p>
+<h3 id="Commit-and-push">Commit and push</h3>
+<h4 id="switch-to-branch-master">switch to branch <code>master</code></h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E:\SecondBlog\themes\next&gt; git checkout master</span><br><span class="line">``` </span><br><span class="line">#### modify and push</span><br><span class="line"></span><br><span class="line">I change some config in submodule and wanna to commit and push it to remote.</span><br><span class="line"></span><br><span class="line">Just like what you will do in other project. Use these command in the submodule catalog.</span><br></pre></td></tr></table></figure>
+<p>E:\SecondBlog\themes\next&gt; git add -A<br>
+E:\SecondBlog\themes\next&gt; git commit -m ‘commit comment’<br>
+E:\SecondBlog\themes\next&gt; git push origin master</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### Update commit id of submodule in project</span><br></pre></td></tr></table></figure>
+<p>E:\SecondBlog&gt; git add -A<br>
+E:\SecondBlog&gt; git commit -m ‘commit comment’<br>
+E:\SecondBlog&gt; git push origin master</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### Update submodule which commit id is changed</span><br></pre></td></tr></table></figure>
+<p>E:\FirstBlog&gt; git pull<br>
+E:\FirstBlog&gt; git submodule init<br>
+E:\FirstBlog&gt; git submodule update</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## Remove Submodule</span><br><span class="line">Remove git cache and physical files.</span><br></pre></td></tr></table></figure>
+<p>E:\FirstBlog&gt; git rm -r --cached \themes\next<br>
+E:\FirstBlog&gt; rm -rf \themes\next</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Change Git Commit Comment</span><br><span class="line">## Have Pushed to Remote</span><br><span class="line">```shell</span><br><span class="line"># 修改倒数3次修改</span><br><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
+<p>output：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick commit_id_1 </span><br><span class="line">pick commit_id_2 </span><br><span class="line">pick commit_id_3</span><br></pre></td></tr></table></figure>
+<p>Modify <code>pick</code> to <code>edit</code> of the commit you want to change and enter <code>wq</code> to quit. Then</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+<p><code>wq</code> save the new comment.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase --continue</span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
+<h2 id="Have-Commit-to-Stage-But-not-Pushed-to-Remote">Have Commit to Stage But not Pushed to Remote</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit –amend</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -484,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/30/The Equals in Java/" rel="next" title="JAVA中equals()和==有什么不同？">
-                <i class="fa fa-chevron-left"></i> JAVA中equals()和==有什么不同？
+              <a href="/2020/03/30/String.intern() Method in Java/" rel="next" title="String.intern() Method in Java">
+                <i class="fa fa-chevron-left"></i> String.intern() Method in Java
               </a>
             
           </div>
@@ -494,8 +567,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/30/尾递归/" rel="prev" title="尾递归">
-                尾递归 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/30/Linear Algebra Learing Notes 1：Linear transformation/" rel="prev" title="Linear Algebra Learing Notes 1：Linear transformation">
+                Linear Algebra Learing Notes 1：Linear transformation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -568,7 +641,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -714,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#github网站上新建分支名称"><span class="nav-number">1.</span> <span class="nav-text">github网站上新建分支名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git如何查看分支"><span class="nav-number">2.</span> <span class="nav-text">git如何查看分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Some Concepets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">github网站上新建分支名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">git如何查看分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Push Changes To A Branch Of Server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Undo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-git-add"><span class="nav-number">5.1.</span> <span class="nav-text">Undo git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-git-commit"><span class="nav-number">5.2.</span> <span class="nav-text">Undo git commit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">Git Submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-A-Submodule-To-Your-Project-And-Push"><span class="nav-number">6.1.</span> <span class="nav-text">Add A Submodule To Your Project And Push</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-submodule-add-submodule-url-path"><span class="nav-number">6.1.1.</span> <span class="nav-text">git submodule add  </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Then-Clone-A-Repository-Including-A-Submodule"><span class="nav-number">6.2.</span> <span class="nav-text">Then Clone A Repository Including A Submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-submodule-init"><span class="nav-number">6.2.1.</span> <span class="nav-text">git submodule init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-submodule-update"><span class="nav-number">6.2.2.</span> <span class="nav-text">git submodule update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-command-coule-realize-submodule-init-and-update"><span class="nav-number">6.2.3.</span> <span class="nav-text">a command coule realize submodule init and update</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Push-Changes-In-Submodule"><span class="nav-number">6.3.</span> <span class="nav-text">Push Changes In Submodule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ensure-that-you-have-the-permission-to-commit-in-submodule"><span class="nav-number">6.3.1.</span> <span class="nav-text">Ensure that you have the permission to commit in submodule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-and-push"><span class="nav-number">6.3.2.</span> <span class="nav-text">Commit and push</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#switch-to-branch-master"><span class="nav-number">6.3.2.1.</span> <span class="nav-text">switch to branch master</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Have-Commit-to-Stage-But-not-Pushed-to-Remote"><span class="nav-number">6.4.</span> <span class="nav-text">Have Commit to Stage But not Pushed to Remote</span></a></li></ol></li></ol></div>
             
 
           </div>

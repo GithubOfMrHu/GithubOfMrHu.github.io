@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="DescritionGiven two strings text1 and text2, return the length of their longest common subsequence.">
+  <meta name="description" content="Descrition Given two strings text1 and text2, return the length of their longest common subsequence.">
 <meta name="keywords" content="Dynamic Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leectcode M1143 Longest Common Subsequence">
 <meta property="og:url" content="http://yoursite.com/2020/04/26/Leectcode-M1143-Longest-Common-Subsequence/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="DescritionGiven two strings text1 and text2, return the length of their longest common subsequence.">
+<meta property="og:description" content="Descrition Given two strings text1 and text2, return the length of their longest common subsequence.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-27T14:41:37.859Z">
+<meta property="og:updated_time" content="2020-07-25T08:12:13.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leectcode M1143 Longest Common Subsequence">
-<meta name="twitter:description" content="DescritionGiven two strings text1 and text2, return the length of their longest common subsequence.">
+<meta name="twitter:description" content="Descrition Given two strings text1 and text2, return the length of their longest common subsequence.">
 
 
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-27 22:41:37" itemprop="dateModified" datetime="2020-04-27T22:41:37+08:00">2020-04-27</time>
+                <time title="修改时间：2020-07-25 16:12:13" itemprop="dateModified" datetime="2020-07-25T16:12:13+08:00">2020-07-25</time>
               
             
           </span>
@@ -460,26 +460,36 @@
       
 
       
-        <h1 id="Descrition"><a href="#Descrition" class="headerlink" title="Descrition"></a>Descrition</h1><p>Given two strings text1 and text2, return the length of their longest common subsequence.<br><a id="more"></a><br>A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, “ace” is a subsequence of “abcde” while “aec” is not). A common subsequence of two strings is a subsequence that is common to both strings.</p>
+        <h1>Descrition</h1>
+<p>Given two strings text1 and text2, return the length of their longest common subsequence.</p>
+<a id="more"></a>
+<p>A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, “ace” is a subsequence of “abcde” while “aec” is not). A common subsequence of two strings is a subsequence that is common to both strings.</p>
 <p>If there is no common subsequence, return 0.</p>
 <p>Example 1:</p>
 <pre><code>Input: text1 = &quot;abcde&quot;, text2 = &quot;ace&quot; 
 Output: 3  
 Explanation: The longest common subsequence is &quot;ace&quot; and its length is 3.
-</code></pre><p>Example 2:</p>
+</code></pre>
+<p>Example 2:</p>
 <pre><code>Input: text1 = &quot;abc&quot;, text2 = &quot;abc&quot;
 Output: 3
 Explanation: The longest common subsequence is &quot;abc&quot; and its length is 3.
-</code></pre><p>Example 3:</p>
+</code></pre>
+<p>Example 3:</p>
 <pre><code>Input: text1 = &quot;abc&quot;, text2 = &quot;def&quot;
 Output: 0
 Explanation: There is no such common subsequence, so the result is 0.
-</code></pre><h1 id="Thinking"><a href="#Thinking" class="headerlink" title="Thinking"></a>Thinking</h1><h2 id="Hint1"><a href="#Hint1" class="headerlink" title="Hint1"></a>Hint1</h2><p>Try dynamic programming. DP[i][j] represents the longest common subsequence of text1[0 … i] &amp; text2[0 … j].</p>
-<h2 id="Hint-2"><a href="#Hint-2" class="headerlink" title="Hint 2"></a>Hint 2</h2><ol>
-<li>DP[i][j] = DP[i - 1][j - 1] + 1 , if text1[i] == text2[j] </li>
-<li>DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]) , otherwise<h1 id="Soluton"><a href="#Soluton" class="headerlink" title="Soluton"></a>Soluton</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(String text1, String text2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] t1 = text1.toCharArray(), t2 = text2.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> dp[] = <span class="keyword">new</span> <span class="keyword">int</span>[t2.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t1.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= t2.length; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = dp[j];</span><br><span class="line">                <span class="keyword">if</span>(t1[i-<span class="number">1</span>] == t2[j-<span class="number">1</span>]) dp[j] = prev + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[j] = Math.max(dp[j], dp[j-<span class="number">1</span>]);</span><br><span class="line">                prev = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[t2.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</code></pre>
+<h1>Thinking</h1>
+<h2 id="Hint1">Hint1</h2>
+<p>Try dynamic programming. DP[i][j] represents the longest common subsequence of text1[0 … i] &amp; text2[0 … j].</p>
+<h2 id="Hint-2">Hint 2</h2>
+<ol>
+<li>DP[i][j] = DP[i - 1][j - 1] + 1 , if text1[i] == text2[j]</li>
+<li>DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]) , otherwise</li>
 </ol>
-
+<h1>Solution</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(String text1, String text2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] t1 = text1.toCharArray(), t2 = text2.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> dp[] = <span class="keyword">new</span> <span class="keyword">int</span>[t2.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t1.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> prev = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= t2.length; j++) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = dp[j];</span><br><span class="line">                <span class="keyword">if</span>(t1[i-<span class="number">1</span>] == t2[j-<span class="number">1</span>]) dp[j] = prev + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> dp[j] = Math.max(dp[j], dp[j-<span class="number">1</span>]);</span><br><span class="line">                prev = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[t2.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -599,7 +609,7 @@ Explanation: There is no such common subsequence, so the result is 0.
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -745,7 +755,7 @@ Explanation: There is no such common subsequence, so the result is 0.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Descrition"><span class="nav-number">1.</span> <span class="nav-text">Descrition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thinking"><span class="nav-number">2.</span> <span class="nav-text">Thinking</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint1"><span class="nav-number">2.1.</span> <span class="nav-text">Hint1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint-2"><span class="nav-number">2.2.</span> <span class="nav-text">Hint 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Soluton"><span class="nav-number">3.</span> <span class="nav-text">Soluton</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Descrition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Thinking</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint1"><span class="nav-number">2.1.</span> <span class="nav-text">Hint1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint-2"><span class="nav-number">2.2.</span> <span class="nav-text">Hint 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
 
           </div>

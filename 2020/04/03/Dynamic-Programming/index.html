@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="Explanation动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
+  <meta name="description" content="Explanation 动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
 <meta name="keywords" content="Dynamic Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dynamic Programming">
 <meta property="og:url" content="http://yoursite.com/2020/04/03/Dynamic-Programming/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="Explanation动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
+<meta property="og:description" content="Explanation 动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T17:28:08.933Z">
+<meta property="og:updated_time" content="2020-07-25T08:11:24.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming">
-<meta name="twitter:description" content="Explanation动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
+<meta name="twitter:description" content="Explanation 动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的Programming指的是一种表格法，并非编写计算机语言）。">
 
 
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-09 01:28:08" itemprop="dateModified" datetime="2020-04-09T01:28:08+08:00">2020-04-09</time>
+                <time title="修改时间：2020-07-25 16:11:24" itemprop="dateModified" datetime="2020-07-25T16:11:24+08:00">2020-07-25</time>
               
             
           </span>
@@ -460,15 +460,21 @@
       
 
       
-        <h1 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h1><p>动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的<code>Programming</code>指的是一种表格法，并非编写计算机语言）。<br><a id="more"></a></p>
-<h1 id="Difference-Between-Divide-and-Conquer"><a href="#Difference-Between-Divide-and-Conquer" class="headerlink" title="Difference Between Divide and Conquer"></a>Difference Between Divide and Conquer</h1><p>区别在于分治法将问题划分为互不相交的子问题，递归的求解子问题，再讲问题的解组合起来得到问题的解。而动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。此时使用分治法时会反复求解那些公共子子问题。而动态规划通过表格记录对每个子子问题只计算一次，避免了不必要的计算工作。</p>
-<h1 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h1><p>动态规划通常用来解决最优化问题（optimization problem）。注意，此类问题的最优解即具有最优值的解可能有多个，我们称这样的解为这个问题的<code>一个最优解</code>（an optinal solution），而不是<code>最优解</code>(the optional solution).</p>
-<h1 id="4-Steps-to-Design-a-Danamic-Programing-Solution"><a href="#4-Steps-to-Design-a-Danamic-Programing-Solution" class="headerlink" title="4 Steps to Design a Danamic Programing Solution"></a>4 Steps to Design a Danamic Programing Solution</h1><p>通常按以下四个步骤来设计一个动态规划算法：</p>
+        <h1>Explanation</h1>
+<p>动态规划（Dynamic Programming）与分治方法相似，都是通过组合子问题的解来求解原问题（这里的<code>Programming</code>指的是一种表格法，并非编写计算机语言）。</p>
+<a id="more"></a>
+<h1>Difference Between Divide and Conquer</h1>
+<p>区别在于分治法将问题划分为互不相交的子问题，递归的求解子问题，再讲问题的解组合起来得到问题的解。而动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。此时使用分治法时会反复求解那些公共子子问题。而动态规划通过表格记录对每个子子问题只计算一次，避免了不必要的计算工作。</p>
+<h1>Application</h1>
+<p>动态规划通常用来解决最优化问题（optimization problem）。注意，此类问题的最优解即具有最优值的解可能有多个，我们称这样的解为这个问题的<code>一个最优解</code>（an optinal solution），而不是<code>最优解</code>(the optional solution).</p>
+<h1>4 Steps to Design a Danamic Programing Solution</h1>
+<p>通常按以下四个步骤来设计一个动态规划算法：</p>
 <ol>
 <li>刻画一个最优解的结构特征。</li>
 <li>递归的定义最优解的值。</li>
 <li>计算最优解的值，通常采取自底向上的方式。</li>
-<li>利用计算出的信息构造一个最优解。<br>步骤1~3是动态规划算法求解问题的基础，如果只需要最优解的值，而非解本身，可以忽略步骤4。</li>
+<li>利用计算出的信息构造一个最优解。<br>
+步骤1~3是动态规划算法求解问题的基础，如果只需要最优解的值，而非解本身，可以忽略步骤4。</li>
 </ol>
 
       
@@ -590,7 +596,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -736,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Explanation"><span class="nav-number">1.</span> <span class="nav-text">Explanation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Difference-Between-Divide-and-Conquer"><span class="nav-number">2.</span> <span class="nav-text">Difference Between Divide and Conquer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application"><span class="nav-number">3.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Steps-to-Design-a-Danamic-Programing-Solution"><span class="nav-number">4.</span> <span class="nav-text">4 Steps to Design a Danamic Programing Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Explanation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Difference Between Divide and Conquer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4 Steps to Design a Danamic Programing Solution</span></a></li></ol></div>
             
 
           </div>

@@ -92,18 +92,18 @@
 
 
 
-  <meta name="description" content="如何迁移hexo博客至另一台主机（windows操作系统)由A主机迁移至另一台主机B">
+  <meta name="description" content="如何迁移hexo博客至另一台主机（windows操作系统) 由A主机迁移至另一台主机B">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Blog Migration and Synchronization">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/Hexo-Blog-Migration-and-Synchronization/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="如何迁移hexo博客至另一台主机（windows操作系统)由A主机迁移至另一台主机B">
+<meta property="og:description" content="如何迁移hexo博客至另一台主机（windows操作系统) 由A主机迁移至另一台主机B">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-02T06:17:20.689Z">
+<meta property="og:updated_time" content="2020-07-26T14:54:14.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Blog Migration and Synchronization">
-<meta name="twitter:description" content="如何迁移hexo博客至另一台主机（windows操作系统)由A主机迁移至另一台主机B">
+<meta name="twitter:description" content="如何迁移hexo博客至另一台主机（windows操作系统) 由A主机迁移至另一台主机B">
 
 
 
@@ -380,16 +380,46 @@
                 
               
 
-              <time title="创建时间：2020-04-02 00:30:27 / 修改时间：14:17:20" itemprop="dateCreated datePublished" datetime="2020-04-02T00:30:27+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-02 00:30:27" itemprop="dateCreated datePublished" datetime="2020-04-02T00:30:27+08:00">2020-04-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-07-26 22:54:14" itemprop="dateModified" datetime="2020-07-26T22:54:14+08:00">2020-07-26</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">课程</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -430,26 +460,52 @@
       
 
       
-        <h1 id="如何迁移hexo博客至另一台主机（windows操作系统"><a href="#如何迁移hexo博客至另一台主机（windows操作系统" class="headerlink" title="如何迁移hexo博客至另一台主机（windows操作系统)"></a>如何迁移hexo博客至另一台主机（windows操作系统)</h1><p>由A主机迁移至另一台主机B<br><a id="more"></a></p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+        <h1>如何迁移hexo博客至另一台主机（windows操作系统)</h1>
+<p>由A主机迁移至另一台主机B</p>
+<a id="more"></a>
+<h2 id="准备">准备</h2>
+<ol>
 <li>在新PC上安装下列应用程序：</li>
 </ol>
 <ul>
 <li>Node.js (Should be at least nodejs 6.9)</li>
-<li>Git<h2 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h2></li>
+<li>Git</li>
 </ul>
+<ol start="2">
+<li>使用 npm 全局安装 Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm insatall -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 开始使用</a></p>
+<h2 id="拷贝">拷贝</h2>
 <ol>
 <li>拷贝主机A中的<code>blog</code>文件夹至主机B的任意目录,如<code>D:\blog</code>。</li>
-<li><p>在主机A控制台执行<code>npm config ls</code>命令，查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">builtin config undefined</span><br><span class="line">prefix = &quot;path&quot;</span><br></pre></td></tr></table></figure>
-<p>path下的node_modules是node.js全局安装的路径，主机A路径是<br><code>C:\Users\user\AppData\Roaming\npm\node_modules</code>，拷贝此路径下的<code>hexo-cli</code>文件夹至主机B对应目录下。</p>
-</li>
-<li>若使用<code>VS Code</code>作为IDE，想继续使用相关插件，则需要拷贝主机A<code>Microsoft VS Code install path</code>的<code>\resources\app</code>路径下的<code>extensions</code>文件夹至主机B <code>VS Code</code>对应目录下。<h2 id="修改主机B的环境变量"><a href="#修改主机B的环境变量" class="headerlink" title="修改主机B的环境变量"></a>修改主机B的环境变量</h2></li>
-<li>在系统变量中的<code>Path</code>变量中添加npm的安装路径<code>C:\Users\user\AppData\Roaming\npm</code>。</li>
-<li>在系统变量中的<code>Path</code>变量中添加node.js的安装路径。</li>
-<li>在<code>blog</code>文件夹下<code>\node_modules\.bin</code>目录下有Hexo的windows系统脚本文件，在系统变量中的<code>Path</code>中添加此路径：<code>D:\blog\node_modules\.bin</code>。</li>
+<li>若使用<code>VS Code</code>作为IDE，想继续使用相关插件，则需要拷贝主机A<code>Microsoft VS Code install path</code>的<code>\resources\app</code>路径下的<code>extensions</code>文件夹至主机B <code>VS Code</code>对应目录下。</li>
 </ol>
-<h1 id="如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客"><a href="#如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客" class="headerlink" title="如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客"></a>如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客</h1><p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">知乎</a></p>
+<h2 id="NOTICE">NOTICE</h2>
+<p>IF YOUR HEXO DEPENDENCY VERSIONS IS LOW AND THERE HAS NO AVALIABLE VERSION.</p>
+<p>DO NOT EXECUTE COMMAND:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm insatall</span><br></pre></td></tr></table></figure>
+<p>It may result in some bugs. For me, my hexo is low version and use the fontawesome@4.6.2 to show icons. The icons could not show correctly after i executed that command, because since fontawesome@5.0.0 the icons label is changed.</p>
+<p>Actually, migrate the config file and posts to a new high version hexo blog would be a good way.</p>
+<p><a href="https://www.dazhuanlan.com/2019/12/09/5dedb26ff1ae9/" target="_blank" rel="noopener">更改hexo next主题的fontawesome版本至最新</a></p>
+<h1>如何使用GitHub管理Hexo Blog</h1>
+<ol>
+<li>
+<p>Create a new private repository like <code>BlogResource</code>.</p>
+</li>
+<li>
+<p>Edit the <code>.gitignore</code> like</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git</span><br><span class="line">/public</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Uploading the <code>blog</code> folder ignore the public folder.</p>
+<p>note: If you don’t want to upload the <code>_config.yml</code> file which store the password infomation, add this file to <code>.gitignore</code>.</p>
+</li>
+<li>
+<p>Commit changes to <code>BlogResource</code> and download when you need.</p>
+</li>
+</ol>
+<p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">知乎</a></p>
 
       
     </div>
@@ -570,7 +626,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -716,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何迁移hexo博客至另一台主机（windows操作系统"><span class="nav-number">1.</span> <span class="nav-text">如何迁移hexo博客至另一台主机（windows操作系统)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝"><span class="nav-number">1.2.</span> <span class="nav-text">拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改主机B的环境变量"><span class="nav-number">1.3.</span> <span class="nav-text">修改主机B的环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客"><span class="nav-number">2.</span> <span class="nav-text">如何通过分支管理实现在两台PC上编辑搭建在github的hexo博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">如何迁移hexo博客至另一台主机（windows操作系统)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝"><span class="nav-number">1.2.</span> <span class="nav-text">拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOTICE"><span class="nav-number">1.3.</span> <span class="nav-text">NOTICE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">如何使用GitHub管理Hexo Blog</span></a></li></ol></div>
             
 
           </div>
