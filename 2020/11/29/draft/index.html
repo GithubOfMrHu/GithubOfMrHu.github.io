@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/snitch32.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/snitch16.ico?v=6.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Java堆栈Stack类已经过时，Java官方推荐使用Deque替代Stack使用。Deque堆栈操作方法：push()、pop()、peek()。 Arrays.binarySearch(int[] nums, int begin, int end, int key); generate random int value in the range leetcode: Linked List Ra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="draft">
+<meta property="og:url" content="http://yoursite.com/2020/11/29/draft/index.html">
+<meta property="og:site_name" content="Bran&#39;s Pensieve">
+<meta property="og:description" content="Java堆栈Stack类已经过时，Java官方推荐使用Deque替代Stack使用。Deque堆栈操作方法：push()、pop()、peek()。 Arrays.binarySearch(int[] nums, int begin, int end, int key); generate random int value in the range leetcode: Linked List Ra">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-01-31T13:54:56.382Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="draft">
+<meta name="twitter:description" content="Java堆栈Stack类已经过时，Java官方推荐使用Deque替代Stack使用。Deque堆栈操作方法：push()、pop()、peek()。 Arrays.binarySearch(int[] nums, int begin, int end, int key); generate random int value in the range leetcode: Linked List Ra">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/11/29/draft/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>draft | Bran's Pensieve</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/GithubOfMrHu" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bran's Pensieve</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>霍格沃茨</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>麻瓜</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>魔法</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>课程</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>时间转换器</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/29/draft/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bran">
+      <meta itemprop="description" content="一个麻瓜">
+      <meta itemprop="image" content="/images/icebear-grin.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bran's Pensieve">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">draft
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-29 19:07:52" itemprop="dateCreated datePublished" datetime="2020-11-29T19:07:52+08:00">2020-11-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-31 21:54:56" itemprop="dateModified" datetime="2021-01-31T21:54:56+08:00">2021-01-31</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/2020/11/29/draft/" class="leancloud_visitors" data-flag-title="draft">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>Java堆栈Stack类已经过时，Java官方推荐使用Deque替代Stack使用。Deque堆栈操作方法：push()、pop()、peek()。</h1>
+<h1>Arrays.binarySearch(int[] nums, int begin, int end, int key);</h1>
+<h1>generate random int value in the range</h1>
+<p>leetcode: Linked List Random Node</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pick = (<span class="keyword">int</span>)(Math.random() * range); <span class="comment">// [0,range)</span></span><br></pre></td></tr></table></figure>
+<h1>Hoare’s Partition vs Lomuto’s Partition</h1>
+<h1>Arrays.copyOfRange(arrays, startIndex, endIndex);</h1>
+<h1>hash</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] topKFrequent(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">int</span>[] keys = <span class="keyword">new</span> <span class="keyword">int</span>[len], values = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">        <span class="comment">// key code</span></span><br><span class="line">        <span class="keyword">int</span> hash = (num &amp; <span class="number">0x7fffffff</span>) % len;</span><br><span class="line">        <span class="keyword">while</span> (keys[hash] != num &amp;&amp; values[hash] &gt; <span class="number">0</span>) ++hash;</span><br><span class="line">        keys[hash] = num;</span><br><span class="line">        ++values[hash];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>Smallest String With A Given Numeric Value</h1>
+<p>Input: n = 5, k = 73<br>
+Output: “aaszz”</p>
+<h2 id="参数为-Char-数组的-String-构造方法String">参数为 Char 数组的 String 构造方法String</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSmallestString</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] arr = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line">        <span class="keyword">int</span> idx = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (k - <span class="number">26</span> &gt; idx) &#123;</span><br><span class="line">            arr[idx] = <span class="string">'z'</span>;</span><br><span class="line">            idx--;</span><br><span class="line">            k -= <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[idx] = (<span class="keyword">char</span>) (k - idx + <span class="string">'a'</span> - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; idx; i++) arr[i] = <span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最优解法">最优解法</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSmallestString</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> z = (k-n)/<span class="number">25</span>;</span><br><span class="line">        <span class="keyword">int</span> a = k - z*<span class="number">26</span>;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; n - z) &#123;</span><br><span class="line">            a = n - z -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> m = k - z*<span class="number">26</span> - a;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 线程安全情况下使用效率更高的 StringBuilder </span></span><br><span class="line">        StringBuffer buf = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">if</span> ( a &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            buf.append(<span class="string">"a"</span>.repeat(a));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (m &gt; <span class="number">0</span>)</span><br><span class="line">            buf.append((<span class="keyword">char</span>)(<span class="string">'a'</span> + m -<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">if</span> (z &gt; <span class="number">0</span>)</span><br><span class="line">            buf.append(<span class="string">"z"</span>.repeat(z));</span><br><span class="line">        <span class="keyword">return</span> buf.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>Concatenation of Consecutive Binary Numbers</h1>
+<p>Input: n = 12<br>
+Output: 505379714<br>
+Explanation: The concatenation results in “1101110010111011110001001101010111100”.<br>
+The decimal value of that is 118505380540.<br>
+After modulo 109 + 7, the result is 505379714.</p>
+<h2 id="Integer-toBinaryString-int-num-方法">Integer.toBinaryString(int num) 方法</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">concatenatedBinary</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mod = <span class="number">1000000007</span> ;</span><br><span class="line">        <span class="keyword">int</span> newNo =<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num=<span class="number">1</span>;num&lt;=n;num++)&#123;</span><br><span class="line">            String binaryRep= Integer.toBinaryString(num);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">char</span> ch : binaryRep.toCharArray())&#123;</span><br><span class="line">                <span class="keyword">int</span> val= (ch==<span class="string">'0'</span>)?<span class="number">0</span>:<span class="number">1</span>;</span><br><span class="line">                </span><br><span class="line">                newNo= ((newNo*<span class="number">2</span>)%mod + val) % mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newNo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="位操作减少一些重复的位赋值运算">位操作减少一些重复的位赋值运算</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">concatenatedBinary</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> result = <span class="number">0</span>, MOD = (<span class="keyword">long</span>) <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> shift = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> copy = i;</span><br><span class="line">        <span class="keyword">if</span> ((i &amp; (i - <span class="number">1</span>)) == <span class="number">0</span>) &#123;</span><br><span class="line">            shift++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// &lt;&lt; key code</span></span><br><span class="line">        result = ((result &lt;&lt; shift) | i) % MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) result;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最优解法-2">最优解法</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 缓存之前求解的结果</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span>[] aux = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100001</span>];</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> BASE = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">concatenatedBinary</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (aux[n] != <span class="number">0</span>) <span class="keyword">return</span> aux[n];</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n &amp;&amp; aux[i] != <span class="number">0</span>) i++;</span><br><span class="line">        <span class="keyword">for</span> (; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (((<span class="number">1</span> &lt;&lt; BASE) &amp; i) != <span class="number">0</span>) BASE++;</span><br><span class="line">            aux[i] = (<span class="keyword">int</span>)((((<span class="keyword">long</span>)(aux[i - <span class="number">1</span>]) &lt;&lt; BASE) + i) % MOD);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> aux[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>Path With Minimum Effort</h1>
+<p>You are a hiker preparing for an upcoming hike. You are given heights, a 2D array of size rows x columns, where heights[row][col] represents the height of cell (row, col). You are situated in the top-left cell, (0, 0), and you hope to travel to the bottom-right cell, (rows-1, columns-1) (i.e., 0-indexed). You can move up, down, left, or right, and you wish to find a route that requires the minimum effort.</p>
+<p>A route’s effort is the maximum absolute difference in heights between two consecutive cells of the route.</p>
+<p>Return the minimum effort required to travel from the top-left cell to the bottom-right cell.</p>
+<h2 id="binary-search-with-dfs">binary search with dfs</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumEffortPath</span><span class="params">(<span class="keyword">int</span>[][] heights)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> r = heights.length;</span><br><span class="line">        <span class="keyword">int</span> c = heights[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> end = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// finding the max element</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;r; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;c; j++)&#123;</span><br><span class="line">                end = Math.max(end, heights[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> ans = Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// binary search</span></span><br><span class="line">        <span class="keyword">while</span>(start &lt;= end) &#123;       </span><br><span class="line">            <span class="comment">// possible effort</span></span><br><span class="line">            <span class="keyword">int</span> mid = start + (end - start)/<span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// An array to check if the cell is already visited or not</span></span><br><span class="line">            <span class="keyword">int</span>[][] visited = <span class="keyword">new</span> <span class="keyword">int</span>[r][c];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// If there exists a path with this mid update the ans and check in the left region;</span></span><br><span class="line">            <span class="keyword">if</span>(DFS(heights, <span class="number">0</span>, <span class="number">0</span>, mid, visited))&#123;</span><br><span class="line">                ans = Math.min(ans, mid);</span><br><span class="line">                end = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// Else check in the right region</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span>[][] arr, <span class="keyword">int</span> r, <span class="keyword">int</span> c, <span class="keyword">int</span> mid, <span class="keyword">int</span>[][] visited)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// destination cell</span></span><br><span class="line">        <span class="keyword">if</span>(r == arr.length - <span class="number">1</span> &amp;&amp; c == arr[<span class="number">0</span>].length - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">boolean</span> poss = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// mark current cell as visited</span></span><br><span class="line">        visited[r][c] = <span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// up</span></span><br><span class="line">        <span class="keyword">if</span>(r &gt; <span class="number">0</span> &amp;&amp; visited[r - <span class="number">1</span>][c] == <span class="number">0</span> &amp;&amp; Math.abs(arr[r-<span class="number">1</span>][c] - arr[r][c]) &lt;= mid)&#123;</span><br><span class="line">            poss = poss || DFS(arr, r - <span class="number">1</span>, c, mid, visited);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// down</span></span><br><span class="line">        <span class="keyword">if</span>(r &lt; arr.length - <span class="number">1</span> &amp;&amp; visited[r + <span class="number">1</span>][c] == <span class="number">0</span> </span><br><span class="line">           &amp;&amp; Math.abs(arr[r + <span class="number">1</span>][c] - arr[r][c]) &lt;= mid)&#123;   </span><br><span class="line">            poss = poss || DFS(arr, r + <span class="number">1</span>, c, mid, visited);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// left</span></span><br><span class="line">        <span class="keyword">if</span>(c &gt; <span class="number">0</span> &amp;&amp; visited[r][c - <span class="number">1</span>] == <span class="number">0</span> &amp;&amp; Math.abs(arr[r][c - <span class="number">1</span>] - arr[r][c]) &lt;= mid)&#123;</span><br><span class="line">            poss = poss || DFS(arr, r, c - <span class="number">1</span>, mid, visited);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// right</span></span><br><span class="line">        <span class="keyword">if</span>(c &lt; arr[<span class="number">0</span>].length - <span class="number">1</span> &amp;&amp; visited[r][c + <span class="number">1</span>] == <span class="number">0</span> </span><br><span class="line">           &amp;&amp; Math.abs(arr[r][c + <span class="number">1</span>] - arr[r][c]) &lt;= mid)&#123;</span><br><span class="line">            poss = poss || DFS(arr, r, c + <span class="number">1</span>, mid, visited);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// return if possible</span></span><br><span class="line">        <span class="keyword">return</span> poss;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="use-PriorityQueue">use PriorityQueue</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumEffortPath</span><span class="params">(<span class="keyword">int</span>[][] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = heights.length;</span><br><span class="line">        <span class="keyword">int</span> n = heights[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> [][] cost = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line">        <span class="keyword">boolean</span> visited [][] = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> [] c : cost)&#123;</span><br><span class="line">            Arrays.fill(c, Integer.MAX_VALUE);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> xDirs [] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> yDirs [] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>,<span class="number">0</span>,-<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        PriorityQueue&lt;<span class="keyword">int</span> [] &gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((a,b) -&gt; a[<span class="number">2</span>] - b[<span class="number">2</span>]);</span><br><span class="line">        pq.offer(<span class="keyword">new</span> <span class="keyword">int</span> []&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;);</span><br><span class="line">        visited[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">int</span> maxSoFar = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!pq.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">int</span> [] cur = pq.poll();</span><br><span class="line">            </span><br><span class="line">            visited[cur[<span class="number">0</span>]][cur[<span class="number">1</span>]] = <span class="keyword">true</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(cur[<span class="number">0</span>] == m-<span class="number">1</span> &amp;&amp; cur[<span class="number">1</span>] == n-<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> cur[<span class="number">2</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; k++)&#123;</span><br><span class="line">                <span class="keyword">int</span> x = cur[<span class="number">0</span>] + xDirs[k];</span><br><span class="line">                <span class="keyword">int</span> y = cur[<span class="number">1</span>] + yDirs[k];</span><br><span class="line">                <span class="keyword">int</span> currCos = cur[<span class="number">2</span>];</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(x &gt;= <span class="number">0</span> &amp;&amp; x &lt; m &amp;&amp; y &gt;=<span class="number">0</span> &amp;&amp; y &lt; n &amp;&amp; !visited[x][y])&#123;</span><br><span class="line">                    <span class="keyword">int</span> diff = Math.abs(heights[cur[<span class="number">0</span>]][cur[<span class="number">1</span>]] - heights[x][y]);</span><br><span class="line">                    <span class="keyword">int</span> maxDiff = Math.max(diff,currCos);</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(maxDiff &lt; cost[x][y])&#123;</span><br><span class="line">                        cost[x][y] = maxDiff;</span><br><span class="line">                        pq.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;x,y,cost[x][y]&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cost[m-<span class="number">1</span>][n-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="update-from-heights-m-1-n-1-with-memo">update from heights[m - 1][n - 1] with memo</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumEffortPath</span><span class="params">(<span class="keyword">int</span>[][] heights)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> southBorder = heights.length;</span><br><span class="line">        <span class="keyword">int</span> eastBorder = heights[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[][] costs = <span class="keyword">new</span> <span class="keyword">int</span>[heights.length][heights[<span class="number">0</span>].length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = heights.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = heights[i].length - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">int</span> thisHeight = heights[i][j];</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(i + <span class="number">1</span> &lt; southBorder || j + <span class="number">1</span> &lt; eastBorder) &#123;</span><br><span class="line">                    <span class="keyword">int</span> costSouth = Integer.MAX_VALUE;</span><br><span class="line">                    <span class="keyword">int</span> costEast = Integer.MAX_VALUE;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(i + <span class="number">1</span> &lt; southBorder) &#123;</span><br><span class="line">                        <span class="comment">// can go south</span></span><br><span class="line">                        <span class="keyword">int</span> southCost = costs[i + <span class="number">1</span>][j];</span><br><span class="line">                        costSouth = Math.max(Math.abs(thisHeight - heights[i+<span class="number">1</span>][j]), southCost);</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(j + <span class="number">1</span> &lt; eastBorder) &#123;</span><br><span class="line">                        <span class="comment">// can go east</span></span><br><span class="line">                        <span class="keyword">int</span> eastCost = costs[i][j+<span class="number">1</span>];</span><br><span class="line">                        costEast = Math.max(Math.abs(thisHeight - heights[i][j+<span class="number">1</span>]), eastCost);</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">int</span> minCost = Math.min(costSouth, costEast);</span><br><span class="line">                    </span><br><span class="line">                    pushUpdates(heights, costs, i, j, minCost);</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> costs[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pushUpdates</span><span class="params">(<span class="keyword">int</span>[][] heights, <span class="keyword">int</span>[][] costs, <span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span> updatedCost)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        costs[i][j] = updatedCost;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> thisHeight = heights[i][j];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// push north</span></span><br><span class="line">        <span class="keyword">if</span>(i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> northCost = costs[i-<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">int</span> potentialCost = Math.max(Math.abs(thisHeight - heights[i-<span class="number">1</span>][j]), updatedCost);</span><br><span class="line">            <span class="keyword">if</span>(potentialCost &lt; northCost)</span><br><span class="line">                pushUpdates(heights, costs, i - <span class="number">1</span>, j, potentialCost);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// push south</span></span><br><span class="line">        <span class="keyword">if</span>(i + <span class="number">1</span> &lt; heights.length) &#123;</span><br><span class="line">            <span class="keyword">int</span> southCost = costs[i+<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">int</span> potentialCost = Math.max(Math.abs(thisHeight - heights[i+<span class="number">1</span>][j]), updatedCost);</span><br><span class="line">            <span class="keyword">if</span>(potentialCost &lt; southCost)</span><br><span class="line">                pushUpdates(heights, costs, i + <span class="number">1</span>, j, potentialCost);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// push east</span></span><br><span class="line">        <span class="keyword">if</span>(j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> eastCost = costs[i][j-<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> potentialCost = Math.max(Math.abs(thisHeight - heights[i][j-<span class="number">1</span>]), updatedCost);</span><br><span class="line">            <span class="keyword">if</span>(potentialCost &lt; eastCost)</span><br><span class="line">                pushUpdates(heights, costs, i, j - <span class="number">1</span>, potentialCost);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// push west</span></span><br><span class="line">        <span class="keyword">if</span>(j + <span class="number">1</span> &lt; heights[i].length) &#123;</span><br><span class="line">            <span class="keyword">int</span> westCost = costs[i][j+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> potentialCost = Math.max(Math.abs(thisHeight - heights[i][j+<span class="number">1</span>]), updatedCost);</span><br><span class="line">            <span class="keyword">if</span>(potentialCost &lt; westCost)</span><br><span class="line">                pushUpdates(heights, costs, i, j + <span class="number">1</span>, potentialCost);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>sql</h1>
+<p>where 不能使用聚合函数作为条件，应该使用在 group by 之后的 having 语句。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/28/Queue-in-Java/" rel="next" title="Queue in Java">
+                <i class="fa fa-chevron-left"></i> Queue in Java
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/icebear-grin.jpg" alt="Bran">
+            
+              <p class="site-author-name" itemprop="name">Bran</p>
+              <p class="site-description motion-element" itemprop="description">一个麻瓜</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">笔记</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">课程</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">魔法</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/GithubOfMrHu" title="GitHub &rarr; https://github.com/GithubOfMrHu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+            </div>
+          
+<!--
+        <div id="musicPlayer">
+         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=399341475&auto=1&height=32"></iframe>
+        </div>
+-->
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Java堆栈Stack类已经过时，Java官方推荐使用Deque替代Stack使用。Deque堆栈操作方法：push()、pop()、peek()。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Arrays.binarySearch(int[] nums, int begin, int end, int key);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">generate random int value in the range</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Hoare’s Partition vs Lomuto’s Partition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Arrays.copyOfRange(arrays, startIndex, endIndex);</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">Smallest String With A Given Numeric Value</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参数为-Char-数组的-String-构造方法String"><span class="nav-number">7.1.</span> <span class="nav-text">参数为 Char 数组的 String 构造方法String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优解法"><span class="nav-number">7.2.</span> <span class="nav-text">最优解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">Concatenation of Consecutive Binary Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer-toBinaryString-int-num-方法"><span class="nav-number">8.1.</span> <span class="nav-text">Integer.toBinaryString(int num) 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位操作减少一些重复的位赋值运算"><span class="nav-number">8.2.</span> <span class="nav-text">位操作减少一些重复的位赋值运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优解法-2"><span class="nav-number">8.3.</span> <span class="nav-text">最优解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">Path With Minimum Effort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#binary-search-with-dfs"><span class="nav-number">9.1.</span> <span class="nav-text">binary search with dfs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-PriorityQueue"><span class="nav-number">9.2.</span> <span class="nav-text">use PriorityQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-from-heights-m-1-n-1-with-memo"><span class="nav-number">9.3.</span> <span class="nav-text">update from heights[m - 1][n - 1] with memo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">sql</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bran</span>
+
+  
+
+  
+</div>
+
+
+<!--
+  <div class="powered-by">由 <a href="https://githubofmrhu.github.io/" class="theme-link" rel="noopener" target="_blank">Magic</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.7.0</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log(`Failed to save Visitor num, with error message: ${responseJSON.error}`);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'pRyMStb4Q4UOk6THrWtzmqxW-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'pRyMStb4Q4UOk6THrWtzmqxW-gzGzoHsz',
+                'X-LC-Key': 'fxibEtH0DGoj0U9rY7vtYItr',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
