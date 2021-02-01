@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
 <meta property="og:description" content="LEFT JOIN in Oracle LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-25T08:11:16.605Z">
+<meta property="og:updated_time" content="2021-02-01T15:13:24.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL Learning Notes">
 <meta name="twitter:description" content="LEFT JOIN in Oracle LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-25 16:11:16" itemprop="dateModified" datetime="2020-07-25T16:11:16+08:00">2020-07-25</time>
+                <time title="修改时间：2021-02-01 23:13:24" itemprop="dateModified" datetime="2021-02-01T23:13:24+08:00">2021-02-01</time>
               
             
           </span>
@@ -487,6 +487,7 @@ date 一个日期数据；fmt 日期格式。该日期将按指定的日期格�
 <li><code>ceil(x)</code> 向上取整。</li>
 <li><code>round(x)</code> 四舍五入。</li>
 </ul>
+<h1>where 不能使用聚合函数作为条件，应该使用在 group by 之后的 having 语句。</h1>
 
       
     </div>
@@ -753,7 +754,7 @@ date 一个日期数据；fmt 日期格式。该日期将按指定的日期格�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">LEFT JOIN in Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">ORACLE SQL 通过出生日期得到年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#month-between函数"><span class="nav-number">2.1.</span> <span class="nav-text">month_between函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRUNC函数"><span class="nav-number">2.2.</span> <span class="nav-text">TRUNC函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#floor、ceil、round函数"><span class="nav-number">2.3.</span> <span class="nav-text">floor、ceil、round函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">LEFT JOIN in Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">ORACLE SQL 通过出生日期得到年龄</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#month-between函数"><span class="nav-number">2.1.</span> <span class="nav-text">month_between函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRUNC函数"><span class="nav-number">2.2.</span> <span class="nav-text">TRUNC函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#floor、ceil、round函数"><span class="nav-number">2.3.</span> <span class="nav-text">floor、ceil、round函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">where 不能使用聚合函数作为条件，应该使用在 group by 之后的 having 语句。</span></a></li></ol></div>
             
 
           </div>
