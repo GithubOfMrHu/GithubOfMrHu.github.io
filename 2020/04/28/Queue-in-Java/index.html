@@ -92,17 +92,17 @@
 
 
 
-  <meta name="description" content="why queue 消息队列 what queue 先进先出 how to use  AbstractQueue ArrayBlockingQueue ArrayDeque ConcurrentLinkedDeque ConcurrentLinkedQueue DelayQueue LinkedBlockingDeque LinkedBlockingQueue LinkedList LinkedT">
+  <meta name="description" content="why queue 消息队列，BFS what queue FIFO(先进先出) data stracture how to use The implementation class implements below methods:    operation Throws exception Returns special value     Insert add(e) offer(e)   R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Queue in Java">
 <meta property="og:url" content="http://yoursite.com/2020/04/28/Queue-in-Java/index.html">
 <meta property="og:site_name" content="Bran&#39;s Pensieve">
-<meta property="og:description" content="why queue 消息队列 what queue 先进先出 how to use  AbstractQueue ArrayBlockingQueue ArrayDeque ConcurrentLinkedDeque ConcurrentLinkedQueue DelayQueue LinkedBlockingDeque LinkedBlockingQueue LinkedList LinkedT">
+<meta property="og:description" content="why queue 消息队列，BFS what queue FIFO(先进先出) data stracture how to use The implementation class implements below methods:    operation Throws exception Returns special value     Insert add(e) offer(e)   R">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-02-07T15:51:32.817Z">
+<meta property="og:updated_time" content="2021-03-18T16:01:57.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Queue in Java">
-<meta name="twitter:description" content="why queue 消息队列 what queue 先进先出 how to use  AbstractQueue ArrayBlockingQueue ArrayDeque ConcurrentLinkedDeque ConcurrentLinkedQueue DelayQueue LinkedBlockingDeque LinkedBlockingQueue LinkedList LinkedT">
+<meta name="twitter:description" content="why queue 消息队列，BFS what queue FIFO(先进先出) data stracture how to use The implementation class implements below methods:    operation Throws exception Returns special value     Insert add(e) offer(e)   R">
 
 
 
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-02-07 23:51:32" itemprop="dateModified" datetime="2021-02-07T23:51:32+08:00">2021-02-07</time>
+                <time title="修改时间：2021-03-19 00:01:57" itemprop="dateModified" datetime="2021-03-19T00:01:57+08:00">2021-03-19</time>
               
             
           </span>
@@ -460,14 +460,42 @@
 
       
         <h1>why queue</h1>
-<p>消息队列</p>
+<p>消息队列，BFS</p>
 <h1>what queue</h1>
-<p>先进先出</p>
+<p>FIFO(先进先出) data stracture</p>
 <h1>how to use</h1>
+<p>The implementation class implements below methods:</p>
+<table>
+<thead>
+<tr>
+<th>operation</th>
+<th>Throws exception</th>
+<th>Returns special value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insert</td>
+<td>add(e)</td>
+<td>offer(e)</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>remove()</td>
+<td>poll()</td>
+</tr>
+<tr>
+<td>Examine</td>
+<td>element()</td>
+<td>peek()</td>
+</tr>
+</tbody>
+</table>
+<h1>AbstractQueue</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象类，不能直接用来声明 Queue 对象，提供了 Queue 实现的骨架方法，通过 extends class 继承类或创建匿名内部类的方式使用。</span></span><br><span class="line"><span class="comment">// 是 ArrayBlockingQueue, ConcurrentLinkedQueue, DelayQueue, LinkedBlockingDeque, LinkedBlockingQueue, LinkedTransferQueue, PriorityBlockingQueue, PriorityQueue, SynchronousQueue 的父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> &lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractCollection</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1>Other Implemented Class</h1>
 <ul>
-<li>AbstractQueue</li>
 <li>ArrayBlockingQueue</li>
-<li>ArrayDeque</li>
 <li>ConcurrentLinkedDeque</li>
 <li>ConcurrentLinkedQueue</li>
 <li>DelayQueue</li>
@@ -518,6 +546,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/02/25/About-Golang/" rel="prev" title="About Golang">
+                About Golang <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -589,7 +621,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">笔记</span>
                   </a>
                 </div>
@@ -679,7 +711,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">魔法</span>
                   </a>
                 </div>
@@ -733,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">why queue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">what queue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">how to use</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">why queue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">what queue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">how to use</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">AbstractQueue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Other Implemented Class</span></a></li></ol></div>
             
 
           </div>
@@ -753,7 +791,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
