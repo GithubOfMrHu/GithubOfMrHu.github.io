@@ -430,17 +430,6 @@
 
           
           
-            <span id="/2020/04/19/Merge-Sort/" class="leancloud_visitors" data-flag-title="Merge Sort">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -627,17 +616,6 @@
 
           
           
-            <span id="/2020/04/18/LeetCode-M146-LRU-Cache/" class="leancloud_visitors" data-flag-title="LeetCode M146 LRU Cache">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -817,17 +795,6 @@
           
 
           
-          
-            <span id="/2020/04/14/Quick Sort/" class="leancloud_visitors" data-flag-title="Quick Sort">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1017,17 +984,6 @@ $</p>
 
           
           
-            <span id="/2020/04/11/Leetcode M138 Copy List with Random Pointer/" class="leancloud_visitors" data-flag-title="Leetcode M138 Copy List with Random Pointer">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -1209,17 +1165,6 @@ $</p>
 
           
           
-            <span id="/2020/04/07/Shallow Copy and Deep Copy in Java/" class="leancloud_visitors" data-flag-title="Shallow Copy and Deep Copy in Java">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -1400,17 +1345,6 @@ $</p>
 
           
           
-            <span id="/2020/04/03/Dynamic-Programming/" class="leancloud_visitors" data-flag-title="Dynamic Programming">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -1572,17 +1506,6 @@ $</p>
           
 
           
-          
-            <span id="/2020/04/02/HTML5 Learning Notes/" class="leancloud_visitors" data-flag-title="HTML5 Learning Notes">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1746,17 +1669,6 @@ $</p>
 
           
           
-            <span id="/2020/04/02/Some-Concepts/" class="leancloud_visitors" data-flag-title="Some Concepts">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          
 
           
 
@@ -1918,17 +1830,6 @@ $</p>
           
 
           
-          
-            <span id="/2020/04/02/CSS-Learning-Notes/" class="leancloud_visitors" data-flag-title="CSS Learning Notes">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -2105,17 +2006,6 @@ $</p>
           
 
           
-          
-            <span id="/2020/04/02/Leetcode-M3-Longest-Substring-Without-Repeating-Characters/" class="leancloud_visitors" data-flag-title="Leetcode M3 Longest Substring Without Repeating Characters">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -2526,74 +2416,6 @@ $</p>
 
 
   
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log(`LeanCloud Counter Error: ${responseJSON.code} ${responseJSON.error}`);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'pRyMStb4Q4UOk6THrWtzmqxW-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'pRyMStb4Q4UOk6THrWtzmqxW-gzGzoHsz',
-                'X-LC-Key': 'fxibEtH0DGoj0U9rY7vtYItr',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
-
 
   
 
